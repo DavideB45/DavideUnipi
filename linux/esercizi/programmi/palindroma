@@ -1,0 +1,29 @@
+#include <stdio.h>
+void inversione(void);
+
+int main()
+{
+	printf("");
+
+int inversione(void)
+{
+	char c;
+	c = getchar();
+	if(c == '*')
+	{
+		return 0;
+	}
+	if(inversione() == 0)
+	{
+  		if(c != getchar())
+		{
+			return 1;
+		}
+		else
+		{
+		}
+	}
+	
+	
+
+}

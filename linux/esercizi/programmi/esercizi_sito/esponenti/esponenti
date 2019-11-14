@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <math.h>
+
+float read_positive_float(void);
+
+int read_positive_int(void);
+
+float sum_pow(float x, int n);
+
+int main(void){
+	float x;
+	int n;
+	x = read_positive_float();
+	n = read_positive_int();
+	printf("%.2f\n", sum_pow(x, n));
+	return 0;
+}
+
+float read_positive_float(void){
+	float x;
+	while(scanf("%f", &x)!=1 || x<0){
+		scanf("%*[^\n]");
+		scanf("%*c");
+		printf("Inserici un intero positivo.\n");
+	}
+	return x;
+}
+
+int read_positive_int(void){
+	int n;
+	while(scanf("%d", &n)!=1 || n<0){
+		scanf("%*[^\n]");
+		scanf("%*c");
+		printf("Inserisci un numero reale positivo.\n");
+	}
+	return n;
+}	
+
+float sum_pow(float x, int n){
+	float res = 0;
+	if(n<0){
+		return res;
+	}
+	else{
+		res = res + pow(x, n);
+		return sum_pow(x, n - 1);
+	}
+}
+
+
+
+
+
+
+
+
