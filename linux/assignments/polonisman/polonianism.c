@@ -14,11 +14,11 @@ typedef struct equazione Eq;
 typedef Eq *EqPtr;
 
 
-_Bool inserimento(EqPtr *headPtr, EqPtr *codaPtr, char c1);
-_Bool risultato(EqPtr eqPtr, int *res);
-_Bool operazione(int a, int b, int c, int *res);
-void dealloc(EqPtr *headPtr);
-void compldue(int res);
+_Bool inserimento(EqPtr *headPtr, EqPtr *codaPtr, char c1);//modifica l'imput in una lista
+_Bool risultato(EqPtr eqPtr, int *res);//risolve l'espressione (restituisce 0 se c'e' overflaw)
+_Bool operazione(int a, int b, int c, int *res);//svolge un operazione elementare (+-x)
+void dealloc(EqPtr *headPtr);//libera la memoria occupata dalla lista
+void compldue(int res);//esegue il complemento a due
 
 
 int main(void){
