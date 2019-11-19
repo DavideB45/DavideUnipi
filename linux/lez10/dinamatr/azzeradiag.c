@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 int getint(void);
-void insert(size_t dim, int **matr[]);
+int *insert(size_t dim, int *matr);
 //void azzera(size_t dim, int matr[][]);
-void printmatr(size_t dim, int *matr[]);
+void printmatr(size_t dim, int *matr);
 
 int main(void){
-	int **matr;
+	int *matr;
 	int dim = getint();
-	insert(dim, &matr);
+	matr = insert(dim, matr);
 	printmatr(dim, matr);
 	return 0;
 }
@@ -24,23 +24,20 @@ int getint(void){
 	return num;
 }
 
-void insert(size_t dim, int **matr[]){
-	**matr = calloc(dim, sizeof(int));
-	for(size_t i = 0; i < dim; i++){
-		*(matr + i) = calloc(dim, sizeof(int));
-	}
+int *insert(size_t dim, int *matr){
+	matr = calloc(dim * dim, sizeof(int));
 	for (size_t i = 0; i < dim; i++){
 		for (size_t j = 0; j < dim; j++){
-			**(*(matr + j) + i) = getint();
+			*((matr + j) + i) = getint();
 		}
 	}
-	return;	
+	return matr;	
 }
 
-void printmatr(size_t dim, int *matr[]){
+void printmatr(size_t dim, int *matr){
 	for (size_t i = 0; i < dim; i++){
 		for (size_t j = 0; j < dim; j++){
-			printf("%d ", matr[i][j]);
+			printf("%d ", *(matr+i+j));
 		}
 		printf("\n");
 	}
