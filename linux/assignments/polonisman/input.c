@@ -37,14 +37,14 @@ int getstring(int lenght,char **string){
 	char c;
 	c = getchar();//lo assegna al ritorno 
 	if(c=='\n'){//termine riga con '\n' termine parola con ' ' possono essere usati insieme
+		printf("%d\n", lenght);
 		*string = calloc(lenght + 1, sizeof(char));//alloca lo spazio GIUSTO per la stinga
-		*(*string + lenght) = '\0';
+		(*string)[lenght] = '\0';
 		return lenght;//ritorna la lunghezza (indice max dell' array + 1)
 	}
-	printf("%c\n", c);
 	getstring(++lenght, string);//incrementa string e poi basta
-	printf("%c\n", c);
-	*(*string+lenght) = c;//quando torna nella funzione lenght ha il suo valore precedente 
-					   //quindi lenght indica correttamente il valore dell'indice per c 
+	(*string)[lenght] = c;//quando torna nella funzione lenght ha il suo valore precedente 
+					   //quindi lenght indica correttamente il valore dell'indice per c
+	printf("%s %c str\n", *string, c); 
 	return lenght;//ritorna lenght per poter saprere la lunghezza dell'array (indmax + i)
 }
