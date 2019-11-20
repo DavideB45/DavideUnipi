@@ -18,6 +18,7 @@ int main(void){
 //*string serve per mettere il risultato :|
 char* getstring(int lenght, char *string){
 	char c;
+	
 	c = getchar();//lo assegna al ritorno 
 	if(c=='\n'){//termine riga con '\n' termine parola con ' ' possono essere usati insieme
 		string = calloc(lenght, sizeof(char));//alloca lo spazio GIUSTO per la stinga
