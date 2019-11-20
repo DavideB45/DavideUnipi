@@ -34,7 +34,7 @@ char* getstring(int lenght, char *string){
 	string = getstring(++lenght, string);//incrementa string e poi basta
 	string[lenght-1] = c;//quando torna nella funzione lenght ha il suo valore precedente 
 					   //quindi lenght indica correttamente il valore dell'indice per c
-	printf("%2.d %p %s |\n", lenght-1, string, string);
+	printf("%2d %p %s |\n", lenght-1, string, string);
 	return string;//ritorna lenght per poter saprere la lunghezza dell'array (indmax + i)
 }
 //funziona anche senza lo '\0' finale anche se non dovrebbe
