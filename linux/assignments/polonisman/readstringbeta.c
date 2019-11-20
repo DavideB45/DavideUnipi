@@ -5,7 +5,7 @@
 
 //crea una lista da un'espressione inserita da tastiera
 //restituisce 0 se si inserisce la stringa di termine 
-char* getstring(int lenght, char *string);
+char* getstring(int lenght, char *string, int *len);
 
 int main(void){
 	char *string;
@@ -16,11 +16,12 @@ int main(void){
 
 //lenght e' neccessario per calloc
 //*string serve per mettere il risultato :|
-char* getstring(int lenght, char *string){
+char* getstring(int lenght, char *string, int *len){
 	char c;
 	c = getchar();//lo assegna al ritorno 
-	if(c=='\n'){//termine riga con '\n' termine parola con ' ' possono essere usati insieme
-		string = calloc(lenght, sizeof(char));//alloca lo spazio GIUSTO per la stinga
+	if(c==' ' || c=='\n'){//termine riga con '\n' termine parola con ' ' possono essere usati insieme
+		*string = calloc(lenght, sizeof(char));//alloca lo spazio GIUSTO per la stinga
+		*len = lenght - 1;
 		//string[lenght] = '\0';//indica la fine della stringa (togliere per l'assignment)
 		printf("%d %p |\n", lenght, string);
 		return string;//ritorna la lunghezza (indice max dell' array + 1)
@@ -31,10 +32,3 @@ char* getstring(int lenght, char *string){
 	printf("%2d %p %s |\n", lenght, string, string);
 	return string;//ritorna length per poter saprere la lunghezza dell'array (indmax + i)
 }
-//funziona anche senza lo '\0' finale anche se non dovrebbe
-
-//per farlo ricorsivo i coda bisogna utilizzare (int lenght, char* string, char...)
-//poi si utilizza un ciclo for nella condizione di temine che assegna ogni carattere
-//la lunghezza puo' essere passata per referenza e poi incrementata nello volgimento del programma
-//anche il puntatore alla stringa si puo' passare per referenza 
-//void getstring(int *lenght, char **string, char...)

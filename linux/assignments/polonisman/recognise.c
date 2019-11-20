@@ -2,80 +2,53 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-//lista di valori su cui operare
-struct numeri{
-	_Bool indice//1=numero 0=operatore
-	int num;
-	struct numeri *prossimoPtr;
-};
-typedef struct numeri Num;
-typedef Num *NumPtr;
-//lista di operandi da applicare
-struct operandi{
-	char oper;
-	struct operandi *prossimoPtr;
-};
-typedef struct operandi Oper;
-typedef Oper *OperPtr;
 
+typedef struct equazione{
+	_Bool indice;//1=numero 0=operatore;
+	int var;
+	struct equazione *prossimoPtr;
+}Eq;
+typedef Eq *EqPtr;
 
-OperPtr inserimento(NumPtr numPtr, OperPtr opPtr);
-_Bool risultato(NumPtr firstnumPtr, OperPtr firstopPtr, int *res);
-_Bool overflaw();
-void compldue(int res);
-
+_Bool geteq(EqPtr *headPtr, EqPtr *codaPtr);
+char* getstring(int *lenght, char *string, int *len);
 
 int main(void){
-	Num *firstnumPtr = NULL;
-	Oper *firstopPtr = NULL;
+	EqPtr headPtr = NULL;
+	EqPtr codaPtr = NULL;
 	int res;
-	firstnumPtr = inserimento(firstnumPtr, firstopPtr);
+	if(geteq(&headPtr, &codaPtr)){
+		printf("Ciao\n");
+		return 0;
+	}
 	//--------------PRINT-LIST--------------------//
 	//--------------------------------------------//
-	while(firstnumptr->prossimoPtr!=NULL){
-		if(firstnumPtr->indice){
-			printf("%d-->", firstnumPtr->num);
+	EqPtr tofreePtr = headPtr;
+	while(headPtr!=NULL){
+		if(headPtr->indice){
+			printf("%d-->", headPtr->var);
 		}
 		else{
-			printf("%d-->", firstnumPtr->num);
+			printf("%d-->", headPtr->var);
+		}
+		free(tofreePtr);
+		headPtr = headPtr->prossimoPtr;
+		tofreePtr = headPtr;
+	}
+	//--------------------------------------------//
+	//--------------------------------------------//
+	return 0;
+}
+
+_Bool geteq(EqPtr *headPtr, EqPtr *codaPtr){
+	int length = 0;
+	char* value = getstring(0, value, &length);
+	if(strcmp(value, "fine")==0){
+		return 1;
+	}
+	else{
+		if(isdigit(value[length])){
+			headPtr->var = 
 		}
 	}
-	printf("%d-->", firstnumPtr->num);
-	//--------------------------------------------//
-	//--------------------------------------------//
-	return 0;
 }
-
-////////////////////CASI///////////////////////////
-/*	
-	
-	c = -      1' '
-	c = -      129' '
-	c = -      ' '
-	c = 1      ' '
-	c = 1      234
-
-*/
-//////////////////////////////////////////////////
-OperPtr inserimento(NumPtr numPtr, OperPtr opPtr){
-	int c;
-	scanf("%d", &c);
-	if(c<=9 && c>=0){
-		numPtr->num = num*10 + c;
-	return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
