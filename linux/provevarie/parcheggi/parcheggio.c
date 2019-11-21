@@ -81,6 +81,11 @@ void sortizzatutto(int posti[]){
 	return;
 }
 
+typedef struct{
+	int value;
+}a;
+typedef a *aPtr;
+
 int main(void){
 	srand(time(NULL));
 	int posti[100];
