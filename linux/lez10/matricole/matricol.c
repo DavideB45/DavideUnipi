@@ -23,9 +23,10 @@ int main(void){
 		insert(&headPtr, &endPtr, num);
 		num = getint();
 	}
+	//
 	RecLenght(headPtr, 0);
 	
-	printf("Stampa l’elenco in ordine inverso di immissione (NULL se vuota):\n");
+	printf("Stampa l'elenco in ordine inverso di immissione (NULL se vuota):\n");
 	RecStampaInversa(headPtr);
 	printf("NULL\n");
 
@@ -33,7 +34,7 @@ int main(void){
 	while((num = getint())==0);
 	headPtr = kill(headPtr, NULL, num);
 	
-	printf("Stampa l’elenco in ordine di immissione (NULL se vuota):\n");
+	printf("Stampa l'elenco in ordine di immissione (NULL se vuota):\n");
 	RecStampa(headPtr);
 
 	int pari = -1, dispari = -1;
