@@ -45,7 +45,7 @@ void addvote(alunnoPtr *startPtr, FILE *fPtr){
             *startPtr = insertnewname; 
         }
     }
-    do{
+    //do{
 
     }
 }

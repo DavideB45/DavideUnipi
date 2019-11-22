@@ -27,7 +27,7 @@ int CreateEq(EqPtr *headPtr){
     scanf("%[^ ,\n]", input);
     getchar();
     //scanf("%*c");
-    if(strcmp(input,"fine*")==0){
+    if(strcmp(input,"fine")==0){
         return 0;
     }
     int length = strlen(input);
