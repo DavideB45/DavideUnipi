@@ -24,20 +24,22 @@ int main(void){
 
 int CreateEq(EqPtr *headPtr){
     char input[12] = {0};
-    scanf("%[^\n]", input);
-    scanf("%*c");
-    if(strcmp(input, "fine")==0){
+    scanf("%[^ ,\n]", input);
+    getchar();
+    //scanf("%*c");
+    if(strcmp(input,"fine*")==0){
         return 0;
     }
     int length = strlen(input);
     printf("%d %s\n", length, input);
-    printf("inserisci un intero: ");
+    
+    /*printf("inserisci un intero: ");
     while(scanf("%d", input)!=1){
         printf("inserisci un intero: ");
         scanf("%*[^\n]");
         scanf("%*c");
     }
     scanf("%*[^\n]");
-    scanf("%*c");
+    scanf("%*c");*/
     return 1;
 }
