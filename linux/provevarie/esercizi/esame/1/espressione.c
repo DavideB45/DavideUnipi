@@ -11,7 +11,7 @@ int main(void){
     int uguaglianze = 0;
     char *array = getstring(0, array);
     int i = 0;
-    printf("%s", array);
+    pr intf("%s", array);
     while(array[i]!='\n'){
         if(array[i]=='('){parentesi++;}
         if(array[i]==')'){parentesi--;}

@@ -131,16 +131,3 @@ void assegnastruct(alunnoPtr vecchio, alunnoPtr nuovoPtr){
     vecchio->nome = nuovoPtr->nome;
     vecchio->nextPtr = NULL;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

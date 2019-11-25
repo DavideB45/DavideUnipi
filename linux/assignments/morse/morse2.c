@@ -13,7 +13,7 @@ _Bool controlloInserimento(char alfabeto[], char frase[]);
 void traduzione(char alfabeto[], char frase[],char morse[][10], int x);
 
 int main(void){
-	char frase[200] = {'\0'};
+	char frase[200] = {'\0'};//salva puntatore a inizio riga, contare i caratteri poi salvarli
 	char alfabeto[36];
 	char morse[36][10];
 	riempiCodice(morse, alfabeto);
