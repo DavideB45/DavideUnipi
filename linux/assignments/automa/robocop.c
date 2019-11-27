@@ -74,10 +74,9 @@ int main(void){//L->J//M->K
 	do{
 		stato = move[stato-'A'](c);
 		c = getchar();
-		printf("%c\t", stato);
 	}while(stato != '1' && c!='\n');
 	if((stato == 'E' || stato == 'F' || stato == 'G' || stato == 'H')&&c=='\n'){
-		printf("stringa appartenente al linuaggio\n");
+		printf("stringa appartenente al linguaggio\n");
 	}
 	else{
 		printf("stringa non appartenente al linguaggio\n");
