@@ -66,9 +66,11 @@ char K(char X){
 		return 'G';
 	return '1';
 }
-int main(void){//L->J//M->K
+
+int main(void){
 	char c;
 	char stato = 'A';
+	//array di puntatori a funzione
 	char (*move[11])(char) ={A, B, C, D, E, F, G, H, I, J, K};
 	c = getchar();
 	do{
