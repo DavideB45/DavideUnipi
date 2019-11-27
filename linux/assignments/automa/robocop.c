@@ -19,7 +19,7 @@ char C(char X){
 	if(X=='1')
 		return 'D';
 	if(isdigit(X))
-		return 'M';
+		return 'K';
 	return '1';
 }
 char D(char X){
@@ -33,7 +33,7 @@ char E(char X){
 	if(X=='1')
 		return 'E';
 	if(isdigit(X))
-		return 'G';
+		return 'F';
 	return '1';
 }
 char F(char X){
@@ -53,23 +53,23 @@ char H(char X){
 }
 char I(char X){
 	if(isdigit(X))
-		return 'L';
+		return 'J';
 	return '1';
 }
-char L(char X){
+char J(char X){
 	if(isdigit(X))
 		return 'H';
 	return '1';
 }
-char M(char X){
+char K(char X){
 	if(isdigit(X))
 		return 'G';
 	return '1';
 }
-int main(void){
+int main(void){//L->J//M->K
 	char c;
 	char stato = 'A';
-	char (*move[11])(char) ={A, B, C, D, E, F, G, H, I, L, M};
+	char (*move[11])(char) ={A, B, C, D, E, F, G, H, I, J, K};
 	c = getchar();
 	do{
 		stato = move[stato-'A'](c);
