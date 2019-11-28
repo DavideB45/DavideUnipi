@@ -5,7 +5,7 @@
 char *readString(void){
 	char tempsting[20];
 	int len;
-	scanf("%[^\n^E]", tempsting);
+	scanf("%[^\n^E^ ]", tempsting);
 	getchar();
 	strcat(tempsting, "\0");
 	int dim = 1;
