@@ -73,10 +73,10 @@ int main(void){
 	//array di puntatori a funzione
 	char (*move[11])(char) ={A, B, C, D, E, F, G, H, I, J, K};
 	c = getchar();
-	do{
+	while(stato != '1' && c!='\n' && (isupper(c) || isdigit(c))){
 		stato = move[stato-'A'](c);
 		c = getchar();
-	}while(stato != '1' && c!='\n');
+	}
 	if((stato == 'E' || stato == 'F' || stato == 'G' || stato == 'H')&&c=='\n'){
 		printf("stringa appartenente al linguaggio\n");
 	}
