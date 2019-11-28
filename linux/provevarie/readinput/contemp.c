@@ -4,7 +4,8 @@
 
 char *readString(void){
 	char tempsting[20];
-	scanf("%[^\n]\n", tempsting);
+	int len;
+	scanf("%[^\n]%*c", tempsting);
 	strcat(tempsting, "\0");
 	printf("%ld	", sizeof(tempsting));
 	int dim = 1;

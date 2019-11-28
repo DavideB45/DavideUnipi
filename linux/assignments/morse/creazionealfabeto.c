@@ -20,12 +20,11 @@ void readAlfabet(char *alfabet,char *morse[]){
     char line[10];
     char translated[8];
     int i =0, max = 10;
-    int len;
+    int len = 10;
     while(strcmp(line,"fine")){
-        getline(line, &max, stdin);
-        sscanf(line, "%c:%[^\n]%n\n", alfabet, translated, len);
+        scanf("%c:%[^\n]%*c", &alfabet[i], translated);
         morse[i]=strcpy(calloc(len-1, sizeof(char)), translated);
+        printf("%c %d %p %s\n",alfabet[i], len, morse[i], morse[i]);
         i++;
-        printf("%d %p %s\n", len, morse[i], morse[i]);
     }
 }
