@@ -1,7 +1,38 @@
 #include <stdio.h>
+#include <string.h>
 
-//riempie la matrice e il vettore rispettivamente con alfabeto morse e alfabeto
-void riempi_codice(char morse[][10], char alfabeto[]){
+
+void riempiCodice(char morse[][10], char alfabeto[]);
+
+int ricerca(char c, char alfabeto[]);
+
+void inserimentoFrase(char frase[]);
+
+_Bool controlloInserimento(char alfabeto[], char frase[]);
+
+void traduzione(char alfabeto[], char frase[],char morse[][10], int x);
+
+int main(void){
+	char frase[200] = {'\0'};//salva puntatore a inizio riga, contare i caratteri poi salvarli
+	char alfabeto[36];
+	char morse[36][10];
+	riempiCodice(morse, alfabeto);
+	
+	while(scanf("%c", &frase[0])==1){
+	inserimentoFrase(frase);
+	
+	if(controlloInserimento(alfabeto, frase)){
+		traduzione(alfabeto, frase, morse, 0);
+		printf("\n");
+	}
+	else{
+		printf("Errore nell'input\n");
+	}
+	}
+	return 0;
+}
+
+void riempiCodice(char morse[][10], char alfabeto[]){
 	char c;
 	int y;
 	scanf("%c", &c);
@@ -29,89 +60,62 @@ void riempi_codice(char morse[][10], char alfabeto[]){
 	scanf("%*c");
 	return;
 }
-//cerca il numero dell'array nel quale si trova il carattere
-int ricerca(char c, char alfabeto[]){
-	if(c<='Z' && c>='A'){
-		c = c + 32;
+
+void inserimentoFrase(char frase[]){
+	int i = 1;
+	while((frase[i] = getchar())!='\n'){
+		i++;
 	}
+	return;
+}
+
+int ricerca(char c, char alfabeto[]){
 	for(int i = 0; i<36; i++){
+		if(c<='Z' && c>='A'){
+			c = c + 32;
+		}
 		if(c==alfabeto[i]){
 			return i;
 		}
 	}
 	switch (c){
 	case '\n':
-		printf("\n");
-	return -2;
+		//printf("\n");
+	return -3;
 	case ' ':
-		printf("    ");
+		//printf("    ");
 	return -2;
 	default :
 	return -1;
 	}
 }
 
-
-_Bool traduci(char c, char morse[][10], char alfabeto[]){
-	int lettera;
-	if(c=='\n'){
-		return 0;
+_Bool controlloInserimento(char alfabeto[], char frase[]){
+	int i = 0;
+	while(frase[i]!='\n'){
+		if(ricerca(frase[i], alfabeto)==-1){
+			return 0;
+		}
+		i++;
 	}
-	else{
-		lettera = ricerca(c, alfabeto);
-		//come impedire di stampare tutta la riga?
-		if(lettera==-1){
-			return 1;
-		} 
-		else{
+	return 1;
+}
+
+void traduzione(char alfabeto[], char frase[],char morse[][10], int x){
+	int lettera;
+		lettera = ricerca(frase[x], alfabeto);
 			if(lettera>=0){
 					printf("%s   ", morse[lettera]);
-					c=getchar();
-					
 			}
 			else{
-				if(c!='\n'){
-					c = getchar();
+				switch (lettera){
+				case -3:
+				return;
+				case -2:
+					printf("    ");
+				break;
 				}
 			}
-		}
-		return traduci(c, morse, alfabeto);
-	}
+		traduzione(alfabeto, frase, morse, x+1);
+		return;
 }
-
-
-int main(void){
-	char testo[200] = {'\0'};//riempire passare al controllo poi tradurre se e' corretto
-	char alfabeto[36];
-	char morse[36][10];
-	riempi_codice(morse, alfabeto);
-	/*for(int i = 0; i<36; i++){
-		printf("%c:%s\n", alfabeto[i], morse[i]);
-	}*/
-	char c;
-	//provare a stampare l'errore controllando dall'inserimento
-	while(scanf("%c", &c)==1){
-		if(traduci(c, morse, alfabeto)==1){
-			printf("Errore nell'input\n");
-			scanf("%*[^\n]");
-			scanf("%*c");
-		}
-		else{
-			printf("\n");
-		}
-	}
-	
-return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-

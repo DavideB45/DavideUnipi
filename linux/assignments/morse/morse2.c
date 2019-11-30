@@ -121,14 +121,4 @@ void traduzione(char alfabeto[], char frase[],char morse[][10], int x){
 		traduzione(alfabeto, frase, morse, x+1);
 		return;
 	//}
-}	
-
-
-
-
-
-
-
-
-
-
+}
