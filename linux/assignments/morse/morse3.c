@@ -23,9 +23,9 @@ int main(void){
 	
 	fPtr = riempiCodice(fPtr, morse, alfabeto);
 	
-	charcontrol(fPtr, morse, alfabeto);
+	//charcontrol(fPtr, morse, alfabeto);
 	
-	traduzione(&fPtr, alfabeto, morse);
+	//traduzione(&fPtr, alfabeto, morse);
 	printf("\n");
 	
 	return 0;
@@ -44,10 +44,11 @@ FILE* riempiCodice(FILE *fPtr, char *morse[], char alfabeto[]){
 	char c;
 	int i = 0;//indice per l'inserimento dei valori
 	int numC;//numero di caratteri della lettera tadotta
-	while(sscanf(fPtr, "%c:", &c)!=1){
+	while(fscanf(fPtr, "%c:", &c)==1){
 		alfabeto[i] = c;
 		numC = ncaratteri(fPtr);
-		morse[i] = calloc(numC, sizeof(char));
-		sscanf(fPtr, "%[^\n]\n", morse[i]);
+		morse[i] = calloc(numC, sizeof(char));//assegnamento spazio per la traduzione
+		fscanf(fPtr, "%[^\n]%*c", morse[i]);//copia morse
+		printf("%c = ", alfabeto[i]);
 	}
 }
