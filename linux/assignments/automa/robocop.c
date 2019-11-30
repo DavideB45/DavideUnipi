@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
+//ogni funzione rappresenta uno stato deterministico che 
+//rimanda ad un nuovo stato a seconda del carattere passato
+//se il carattere non rientra tra quelli aspettati ritorna '1'
 char A(char X){
 	if(isalpha(X))
 		return 'A';
@@ -68,8 +71,8 @@ char K(char X){
 }
 
 int main(void){
-	char c;
-	char stato = 'A';
+	char c;//carattere letto
+	char stato = 'A';//stato attuale ('A' = stato iniziale)
 	//array di puntatori a funzione
 	char (*move[11])(char) ={A, B, C, D, E, F, G, H, I, J, K};
 	c = getchar();
