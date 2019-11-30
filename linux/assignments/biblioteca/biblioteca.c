@@ -11,10 +11,10 @@ typedef struct libro{
 	struct libro* nextPtr;
 }Libro;
 typedef Libro* Elenco;
-typedef enum{Eof, CSV,} indice;
-typedef enum{RESTITUZIONE, PRESTITO} action;
+typedef enum{Eof, CSV,} indice;//utilizzato per sapere a quale carattere il programma deve interrompere la lettura
+//typedef enum{RESTITUZIONE, PRESTITO} action;
 
-int choise(void);
+int choise(void);//restituisce la scelta dell'utente
 void ceck(void* newPtr);//controlla che il puntatore non sia nullo
 char *readString(indice x);//restituisce un pintatore alla stringa letta da stdin
 _Bool inserimento(Elenco *headPtr);//inserice un libro
@@ -153,8 +153,8 @@ void ricerca(Elenco correntePtr){
 void cerca(Elenco correntePtr, char *autore, char *titolo){
 	if(correntePtr==NULL){
 		printf("Libro non trovato.\n");
-		//free(autore);//sono
-		//free(titolo);//neccessari?
+		free(autore);
+		free(titolo);
 		return;
 	}
 	if(strcmp(correntePtr->autore,autore)==0 && strcmp(correntePtr->titolo,titolo)==0){
