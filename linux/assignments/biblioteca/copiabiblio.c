@@ -143,12 +143,12 @@ void ricerca(Elenco correntePtr){
 	printf("Inserire titolo: ");
 	char*titolo = readString(Eof);
 	cerca(correntePtr, autore, titolo);
+	free(autore);
+	free(titolo);
 }
 void cerca(Elenco correntePtr, char *autore, char *titolo){
 	if(correntePtr==NULL){//se il libro non e' stato trovato
 		printf("Libro non trovato.\n");
-		free(autore);
-		free(titolo);
 		return;
 	}
 	if(strcmp(correntePtr->autore,autore)==0 && strcmp(correntePtr->titolo,titolo)==0){//quando il libro viene trovato
@@ -157,8 +157,6 @@ void cerca(Elenco correntePtr, char *autore, char *titolo){
 			return;
 		}
 		printf("%d copie disponibili.\n", correntePtr->copiedDisp);
-		free(autore);
-		free(titolo);
 		return;
 	}
 	else{//chiamata ricorsiva
