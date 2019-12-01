@@ -155,7 +155,7 @@ _Bool risultato(EqPtr eqPtr, int *res){
 	//non c'e' overflaw
 	free(primoNPtr);
 	return 0;
-}
+} 
 
 _Bool operazione(int a, int b, int c, int *res){
 	switch (c){
