@@ -37,7 +37,7 @@ int main(void){
 	while(strcmp(string, "fine")!=0){
 		overflaw = inserimento(&headPtr, &codaPtr, string);
 		if(!overflaw){
-		overflaw = 	(headPtr, &res);
+		overflaw = 	risultato(headPtr, &res);
 			if(!overflaw){
 				headPtr = NULL;
 				printf("%d in C2: ", res);//visualizza il rsultato
