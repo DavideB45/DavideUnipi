@@ -48,7 +48,7 @@ int main(void){
 			}
 		}
 		else{
-			printf("Overflaw!\n");//overflaw in inserimento
+			printf("Overflow!\n");//overflaw in inserimento
 			while(getchar()!='\n');//pulizia buffer input
 			dealloc(&headPtr);//pulizia memoria
 		}
