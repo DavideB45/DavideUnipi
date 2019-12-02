@@ -18,7 +18,7 @@ int main(void){
 	char *morse[ALFABETO];//alfabeto morse
 	
 	FILE *fPtr;//apertura file
-	if((fPtr = fopen("input.txt", "r"))==NULL){
+	if((fPtr = fopen("try.txt", "r"))==NULL){
 		printf("File not found\n");
 		exit(1);
 	}
@@ -29,11 +29,16 @@ int main(void){
 	
 	char x ;
 	int traducibile;
-	/*do{
+	/*FILE * backPtr;
+	backPtr = fPtr;
+	int num = fPtr - backPtr;
+	printf("\nnum = %d\tPtr1 = %p Ptr2 = %p\n", num, fPtr, backPtr);
+	do{
 		while(fscanf(fPtr,"%c", &x), x==' ');
 		traducibile = ricerca(alfabeto, x);
-	}while(x!='\r' && traducibile!=-1);*/
-	
+	}while(x!='\r' && traducibile!=-1);
+	num = fPtr - backPtr;
+	printf("\nnum = %d\tPtr1 = %p Ptr2 = %p\n", num, fPtr, backPtr);*/
 	traduzione(alfabeto, morse, fPtr);
 	printf("\n");
 	
@@ -60,9 +65,13 @@ FILE* riempiCodice(FILE *fPtr, char *morse[], char alfabeto[]){
 }
 
 int ricerca(char alfabeto[], char tofind){
+	if(tofind==' '){
+		printf("  space  ");
+		return -2;
+	}
 	for(int i = 0; i<=ALFABETO; i++){
 		if(tofind==alfabeto[i]){
-			//printf("%c ",tofind);
+			printf("%c", alfabeto[i]);
 			return i;
 		}
 	}
@@ -74,10 +83,12 @@ int ricerca(char alfabeto[], char tofind){
 void traduzione(char alfabeto[],  char *morse[], FILE *fPtr){
 	char lettera;
 	int indice;
-	fscanf(fPtr, "%c", &lettera);
+	fscanf(fPtr, "%c", &lettera);//legge un carattere
 	do{
+		if(isalpha(lettera))//rende le lettere minuscole
+			tolower(lettera);
 		indice = ricerca(alfabeto, lettera);
-		if(indice!=-1){
+		if(indice!=-2){
 			printf("%d %c %s   ", indice, lettera, morse[indice]);
 		}
 		else{
