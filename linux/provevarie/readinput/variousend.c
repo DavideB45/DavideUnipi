@@ -7,14 +7,13 @@ char *readString(void){
 	int len;
 	scanf("%[^\n^E^ ]", tempsting);
 	getchar();
-	strcat(tempsting, "\0");
-	int dim = 1;
-	int i = 0;
-	while(tempsting[i]!='\0'){
+	//strcat(tempsting, "\0");
+	int dim = 0;
+	while(tempsting[dim]!='\0'){
 		dim++;
-		i++;
 	}
-	return strcpy(calloc(dim, sizeof(char)), tempsting);
+	printf("dim = %d strlen = %d ", dim, strlen(tempsting));
+	return strcpy(calloc(dim + 1, sizeof(char)), tempsting);
 }
 
 int main(void){
@@ -26,3 +25,13 @@ int main(void){
 	}while(strcmp(string,"fine")!=0);
 	return 0;
 }
+////////////////////////////////////////////////////////////////////////////////////////
+///*								   BEST	WAY										*///
+////////////////////////////////////////////////////////////////////////////////////////
+/*/ char *readString(FILE *fPtr){													 /*/
+/*/		char tempsting[20];//stringa temporanea										 /*/
+/*/		fscanf(fPtr, "%[^\n]\n", tempsting);//lettura da file fino a '\n'			 /*/
+/*/		//copia di tempstring in una memoria allocata e restituita dalla funzione	 /*/
+/*/		return strcpy(calloc(strlen(tempsting)+1, sizeof(char)), tempsting);		 /*/
+/*/}																				 /*/
+////////////////////////////////////////////////////////////////////////////////////////
