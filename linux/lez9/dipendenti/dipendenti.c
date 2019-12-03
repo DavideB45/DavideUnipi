@@ -18,10 +18,6 @@ void printdip(Dipendente dip);
 int main(void){
 	Dipendente nome[4];
 	FILE *fPtr;
-	if((fPtr = fopen("input.txt", "rb"))==NULL){
-		printf("File not found\n");
-		exit(1);
-	}
 	//inserimento dipendeti da file
 	for(size_t i = 0; i<4; i++){
 		fread(&nome[i], sizeof(Dipendente), 1, fPtr);

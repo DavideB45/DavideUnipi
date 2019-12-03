@@ -18,7 +18,7 @@ int main(void){
 	char *morse[ALFABETO];//alfabeto morse
 	
 	FILE *fPtr;//apertura file
-	if((fPtr = fopen("try.txt", "r"))==NULL){
+	if((fPtr = fopen("input.txt", "r"))==NULL){
 		printf("File not found\n");
 		exit(1);
 	}
@@ -29,19 +29,21 @@ int main(void){
 	
 	char x ;
 	int traducibile;
-	/*FILE * backPtr;
-	backPtr = fPtr;
-	int num = fPtr - backPtr;
-	printf("\nnum = %d\tPtr1 = %p Ptr2 = %p\n", num, fPtr, backPtr);
+	long back;
 	do{
-		while(fscanf(fPtr,"%c", &x), x==' ');
-		traducibile = ricerca(alfabeto, x);
-	}while(x!='\r' && traducibile!=-1);
-	num = fPtr - backPtr;
-	printf("\nnum = %d\tPtr1 = %p Ptr2 = %p\n", num, fPtr, backPtr);*/
-	traduzione(alfabeto, morse, fPtr);
-	printf("\n");
+		back = ftell(fPtr);
+		
+		do{
+			while(fscanf(fPtr,"%c", &x), x==' ');
+			traducibile = ricerca(alfabeto, x);
+		}while(x!='\r' && traducibile!=-1);
+		
+		fseek(fPtr, back, SEEK_SET);
+		traduzione(alfabeto, morse, fPtr);
 	
+	}while(!feof(fPtr));
+	fclose(fPtr);
+	printf("\n");
 	return 0;
 }
 
@@ -78,7 +80,6 @@ int ricerca(char alfabeto[], char tofind){
 	printf("\tnon c'e' %d", tofind);
 	return -1;
 }
-
 
 void traduzione(char alfabeto[],  char *morse[], FILE *fPtr){
 	char lettera;
