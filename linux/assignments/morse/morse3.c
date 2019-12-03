@@ -9,7 +9,7 @@ FILE* riempiCodice(FILE *fPtr, char *morse[], char alfabeto[]);
 //restrtuisce un puntatore ad una stringa letta fino a '\n'
 char *readString(FILE *fPtr);
 //controlla che non vi siano caratteri non appartenenti all'alfabeto nella riga
-int ricerca(char alfabeto[], char tofind);
+int controllo(char toceck);
 //traduce una riga di testo
 void traduzione(char alfabeto[],  char *morse[], FILE *fPtr);
 
@@ -30,22 +30,26 @@ int main(void){
 	char x ;
 	int traducibile;
 	long back;
-	do{
+	while(!feof(fPtr)){
+		traducibile = 0;
 		back = ftell(fPtr);
-		fscanf(fPtr,"%c", &x);
 		//controlla che la riga possa essere tradotta
-		while(traducibile!=-1){
-			traducibile = ricerca(alfabeto, x);
+		do{
 			fscanf(fPtr,"%c", &x);
-		}
-		if(x=='\n'){
+			traducibile = controllo(x);
+		}while(traducibile!=-1);
+		printf("\n");
+		if(x=='\r'){
 			fseek(fPtr, back, SEEK_SET);
 			traduzione(alfabeto, morse, fPtr);
+			printf("\n");
 		}
 		else{
-			fscanf(fPtr, "%*[^\n]%*c");
+			fscanf(fPtr, "%*[^\n]\n");
+			printf("errore nell'input\n");
 		}
-	}while(!feof(fPtr));
+		//avanza uno '\n'
+	};
 	fclose(fPtr);
 	printf("\n");
 	return 0;
@@ -70,15 +74,10 @@ FILE* riempiCodice(FILE *fPtr, char *morse[], char alfabeto[]){
 	}
 }
 
-int ricerca(char alfabeto[], char tofind){
-	if(tofind==' '){
-		printf("  space  ");
-		return -2;
-	}
-	for(int i = 0; i<=ALFABETO; i++){
-		if(tofind==alfabeto[i]){
-			return i;
-		}
+int controllo(char toceck){
+	if(toceck==' ' || isalnum(toceck)){
+		printf("%c ", toceck);
+		return 1;
 	}
 	return -1;
 }
@@ -89,10 +88,9 @@ void traduzione(char alfabeto[],  char *morse[], FILE *fPtr){
 	
 	while(fscanf(fPtr, "%c", &lettera), lettera!='\r'){
 		if(lettera!=' '){
-			if(isalpha(lettera))//rende le lettere minuscole
-				lettera = tolower(lettera);
+			lettera = tolower(lettera);
 			indice = isalpha(lettera) ? (lettera-'a') : (lettera - '0' + 'z' - 'a' + 1);
-			printf("%d %c %s   ", indice, lettera, morse[indice]);
+			printf("%d %c %s   ", lettera, lettera, morse[indice]);
 		}
 		else{
 			printf("     ");
