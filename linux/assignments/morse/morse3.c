@@ -32,15 +32,19 @@ int main(void){
 	long back;
 	do{
 		back = ftell(fPtr);
-		
-		do{
-			while(fscanf(fPtr,"%c", &x), x==' ');
+		fscanf(fPtr,"%c", &x);
+		//controlla che la riga possa essere tradotta
+		while(traducibile!=-1){
 			traducibile = ricerca(alfabeto, x);
-		}while(x!='\r' && traducibile!=-1);
-		
-		fseek(fPtr, back, SEEK_SET);
-		traduzione(alfabeto, morse, fPtr);
-	
+			fscanf(fPtr,"%c", &x);
+		}
+		if(x=='\n'){
+			fseek(fPtr, back, SEEK_SET);
+			traduzione(alfabeto, morse, fPtr);
+		}
+		else{
+			fscanf(fPtr, "%*[^\n]%*c");
+		}
 	}while(!feof(fPtr));
 	fclose(fPtr);
 	printf("\n");
@@ -73,28 +77,26 @@ int ricerca(char alfabeto[], char tofind){
 	}
 	for(int i = 0; i<=ALFABETO; i++){
 		if(tofind==alfabeto[i]){
-			printf("%c", alfabeto[i]);
 			return i;
 		}
 	}
-	printf("\tnon c'e' %d", tofind);
 	return -1;
 }
 
 void traduzione(char alfabeto[],  char *morse[], FILE *fPtr){
 	char lettera;
 	int indice;
-	fscanf(fPtr, "%c", &lettera);//legge un carattere
-	do{
-		if(isalpha(lettera))//rende le lettere minuscole
-			tolower(lettera);
-		indice = ricerca(alfabeto, lettera);
-		if(indice!=-2){
+	
+	while(fscanf(fPtr, "%c", &lettera), lettera!='\r'){
+		if(lettera!=' '){
+			if(isalpha(lettera))//rende le lettere minuscole
+				lettera = tolower(lettera);
+			indice = isalpha(lettera) ? (lettera-'a') : (lettera - '0' + 'z' - 'a' + 1);
 			printf("%d %c %s   ", indice, lettera, morse[indice]);
 		}
 		else{
 			printf("     ");
 		}
-		fscanf(fPtr, "%c", &lettera);
-	}while(lettera!='\n' && lettera!='\r');
+	}
+	fgetc(fPtr);
 }
