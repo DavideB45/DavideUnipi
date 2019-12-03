@@ -23,7 +23,6 @@ int main(void){
 
 	//lettura alfabeto da file
 	riempiCodice(fPtr, morse);
-	while(fgetc(fPtr)!='\n');
 	
 	char x ;
 	int traducibile;
@@ -65,6 +64,7 @@ void riempiCodice(FILE *fPtr, char *morse[]){
 		morse[i] = readString(fPtr);
 		i++;
 	}
+	while(fgetc(fPtr)!='\n');//toglie gli asterischi
 }
 
 int controllo(char toceck){
