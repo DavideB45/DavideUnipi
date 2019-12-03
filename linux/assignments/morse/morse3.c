@@ -5,7 +5,7 @@
 #define ALFABETO 36
 
 //riempie i due alfabeti e restituisce il puntatore alla fine degli alfabeti
-FILE* riempiCodice(FILE *fPtr, char *morse[]);
+void riempiCodice(FILE *fPtr, char *morse[]);
 //restrtuisce un puntatore ad una stringa letta fino a '\n'
 char *readString(FILE *fPtr);
 //controlla che non vi siano caratteri non appartenenti all'alfabeto nella riga
@@ -15,54 +15,50 @@ void traduzione(char *morse[], FILE *fPtr);
 
 int main(void){
 	char *morse[ALFABETO];
-	
 	FILE *fPtr;//apertura file
 	if((fPtr = fopen("input.txt", "r"))==NULL){
 		printf("File not found\n");
 		exit(1);
 	}
-	//lettura alfabeti da file
+
+	//lettura alfabeto da file
 	riempiCodice(fPtr, morse);
 	while(fgetc(fPtr)!='\n');
-	printf("\n\n");
 	
 	char x ;
 	int traducibile;
 	long back;
 	while(!feof(fPtr)){
 		traducibile = 0;
-		back = ftell(fPtr);
+		back = ftell(fPtr);//salvo l'inizio della riga
 		//controlla che la riga possa essere tradotta
 		do{
 			fscanf(fPtr,"%c", &x);
 			traducibile = controllo(x);
 		}while(traducibile!=-1);
-		printf("\n");
-		if(x=='\r'){
-			fseek(fPtr, back, SEEK_SET);
+		//ece dal wile quando trova uno '\r' o un errore nell'input
+		if(x=='\r'){//e' traducibile
+			fseek(fPtr, back, SEEK_SET);//torno a inizio riga
 			traduzione(morse, fPtr);
-			printf("\n");
 		}
-		else{
-			fscanf(fPtr, "%*[^\n]\n");
-			printf("errore nell'input\n");
+		else{//non e' traducibile
+			fscanf(fPtr, "%*[^\n]\n");//salta la riga
+			printf("Errore nell'input\n");
 		}
-		//avanza uno '\n'
-	};
+	}
 	fclose(fPtr);
-	printf("\n");
 	return 0;
 }
 
 char *readString(FILE *fPtr){
-	char tempsting[20];//stringa temporanea
-	fscanf(fPtr, "%[^\r]\r\n", tempsting);//lettura da file fino a '\n' o '\r'
-	int toalloc = strlen(tempsting)+1;
+	char tempsting[20];
+	fscanf(fPtr, "%[^\r]\r\n", tempsting);
+	int toalloc = strlen(tempsting)+1;//dimensione della stringa
 	//copia di tempstring in una memoria allocata e restituita dalla funzione
 	return memcpy(calloc(toalloc, sizeof(char)), tempsting, toalloc);
 }
 
-FILE* riempiCodice(FILE *fPtr, char *morse[]){
+void riempiCodice(FILE *fPtr, char *morse[]){
 	char c;
 	int i = 0;//indice per l'inserimento dei valori
 	while(fscanf(fPtr, "%c:", &c), c!='*'){
@@ -81,10 +77,10 @@ int controllo(char toceck){
 void traduzione(char *morse[], FILE *fPtr){
 	char lettera;
 	int indice;
-	
+	//traduce fino a che trova uno '\r'
 	while(fscanf(fPtr, "%c", &lettera), lettera!='\r'){
 		if(lettera!=' '){
-			lettera = tolower(lettera);
+			lettera = tolower(lettera);//calcola la posizione della lettera da tradurre
 			indice = isalpha(lettera) ? (lettera-'a') : (lettera - '0' + 'z' - 'a' + 1);
 			printf("%s   ",morse[indice]);
 		}
@@ -92,5 +88,6 @@ void traduzione(char *morse[], FILE *fPtr){
 			printf("    ");
 		}
 	}
+	printf("\n");
 	fgetc(fPtr);
 }

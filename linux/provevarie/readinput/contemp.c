@@ -15,7 +15,8 @@ char *readString(void){
 		i++;
 	}
 	printf("%ld	", dim*sizeof(char));
-	return strcpy(calloc(dim, sizeof(char)), tempsting);
+	char *string = calloc(dim, sizeof(char);
+	return strcpy(string, tempsting);
 }
 
 long unsigned int sizeartigianale(char string[]){
