@@ -18,7 +18,7 @@ int main(void){
 	FILE *fPtr;//apertura file
 	if((fPtr = fopen("input.txt", "r"))==NULL){
 		printf("File not found\n");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 
 	//lettura alfabeto da file
@@ -46,7 +46,7 @@ int main(void){
 
 char *readString(FILE *fPtr){
 	char tempsting[20];
-	fscanf(fPtr, "%[^\r]\r\n", tempsting);
+	fscanf(fPtr, "%[^\n]\n", tempsting);
 	int toalloc = strlen(tempsting)+1;//dimensione della stringa
 	//copia di tempstring in una memoria allocata e restituita dalla funzione
 	return memcpy(calloc(toalloc, sizeof(char)), tempsting, toalloc);
@@ -67,7 +67,7 @@ _Bool controllo(FILE *fPtr){
 	if(toceck==' ' || isalnum(toceck)){
 		return controllo(fPtr); 
 	}
-	if(toceck=='\r'){
+	if(toceck=='\n'){
 		return 1;//puo' essere tradotta
 	}
 	return 0;//non puo' essere tradotta
@@ -77,7 +77,7 @@ void traduzione(char *morse[], FILE *fPtr){
 	char lettera;
 	int indice;
 	//traduce fino a che trova uno '\r'
-	while(fscanf(fPtr, "%c", &lettera), lettera!='\r'){
+	while(fscanf(fPtr, "%c", &lettera), lettera!='\n'){
 		if(lettera!=' '){
 			lettera = tolower(lettera);//calcola la posizione della lettera da tradurre
 			indice = isalpha(lettera) ? (lettera-'a') : (lettera - '0' + 'z' - 'a' + 1);
@@ -88,5 +88,4 @@ void traduzione(char *morse[], FILE *fPtr){
 		}
 	}
 	printf("\n");
-	fgetc(fPtr);
 }
