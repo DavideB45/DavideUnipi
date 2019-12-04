@@ -67,7 +67,7 @@ _Bool controllo(FILE *fPtr){
 	if(toceck==' ' || isalnum(toceck)){
 		return controllo(fPtr); 
 	}
-	if(toceck=='\n'){
+	if(toceck=='\r'){
 		return 1;//puo' essere tradotta
 	}
 	return 0;//non puo' essere tradotta
@@ -77,7 +77,7 @@ void traduzione(char *morse[], FILE *fPtr){
 	char lettera;
 	int indice;
 	//traduce fino a che trova uno '\r'
-	while(fscanf(fPtr, "%c", &lettera), lettera!='\n'){
+	while(fscanf(fPtr, "%c", &lettera), lettera!='\r'){
 		if(lettera!=' '){
 			lettera = tolower(lettera);//calcola la posizione della lettera da tradurre
 			indice = isalpha(lettera) ? (lettera-'a') : (lettera - '0' + 'z' - 'a' + 1);
@@ -88,4 +88,5 @@ void traduzione(char *morse[], FILE *fPtr){
 		}
 	}
 	printf("\n");
+	fgetc(fPtr);
 }
