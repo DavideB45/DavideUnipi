@@ -18,7 +18,7 @@ int main(void){
 	FILE *fPtr;//apertura file
 	if((fPtr = fopen("input.txt", "r"))==NULL){
 		printf("File not found\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	//lettura alfabeto da file
@@ -46,7 +46,7 @@ int main(void){
 
 char *readString(FILE *fPtr){
 	char tempsting[20];
-	fscanf(fPtr, "%[^\n]\n", tempsting);
+	fscanf(fPtr, "%[^\r]\r\n", tempsting);
 	int toalloc = strlen(tempsting)+1;//dimensione della stringa
 	//copia di tempstring in una memoria allocata e restituita dalla funzione
 	return memcpy(calloc(toalloc, sizeof(char)), tempsting, toalloc);
