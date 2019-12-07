@@ -17,7 +17,7 @@ int main(void){
         while(getchar()!='\n');
     }
     head(base, hig%2);
-    body(base, hig%2);
+   // body(base, hig%2);
 }
 
 void head(int b, int h){
