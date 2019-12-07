@@ -18,8 +18,9 @@ int main(void){
         printf("Errore nell' input\n");
         return 0;
     }
-    printf("%d\n", size/2);
-    for(int i = 0; i<size/2; i++){
+    while(getchar()!='\n');
+    int i;
+    for(i = 0; i<size/2; i++){
         push(&headPtr);
     }
     if(size%2==1){
@@ -30,6 +31,7 @@ int main(void){
     } else {
         printf("Stringa non palindroma\n");
     }
+    return 0;
 }
 
 void push(LetPtr *headPtr){
@@ -38,12 +40,17 @@ void push(LetPtr *headPtr){
         printf("Mem Full\n");
         exit(EXIT_FAILURE);
     } else {
+        newletter->nextPtr = *headPtr;
         newletter->ch = getchar();
         *headPtr = newletter;
     }
 }
 
 char pop(LetPtr *headPtr){
+    if(*headPtr==NULL){
+        printf("stringa piu' lunga di quanto aspettato\n");
+        exit(EXIT_FAILURE);
+    }
     LetPtr tofree = *headPtr;
     char ch = tofree->ch;
     *headPtr = tofree->nextPtr;
@@ -56,9 +63,12 @@ _Bool ceck(LetPtr *headPtr){
     if(toverify=='\n'){
         return 1;
     } else {
-        if(toverify = pop(headPtr)){
-            ceck(headPtr);
+        char x = pop(headPtr);
+        if(toverify == x){
+            printf("%c = %c\n", toverify, x);
+            return ceck(headPtr);
         } else {
+            printf("%c = %c", toverify, x);
             return 0;
         }
     }
