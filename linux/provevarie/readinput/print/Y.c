@@ -23,11 +23,11 @@ int main(void){
 void head(int b, int h){
     int space = 0;
     for(int i = 0; i < h; i++){
-        for(int j = 0; j <= space; j++){
+        for(int j = 0; j < space; j++){
             printf(" ");
         }
         printf("*");
-        for(int j = 0; j <= b - space; j++){
+        for(int z = 0; z <= b - space; z++){
             printf(" ");
         }
         space++;
