@@ -16,7 +16,7 @@ int main(void){
         printf("Errore nell'input\nInserire un intero positivo dispari maggiore di 2: ");
         while(getchar()!='\n');
     }
-    head(base, hig%2+1);
+    head(base, hig);
    // body(base, hig%2);
 }
 
