@@ -43,7 +43,7 @@ void push(LetPtr *headPtr){
 }
 
 char pop(LetPtr *headPtr){
-    LetPtr tofree = headPtr;
+    LetPtr tofree = *headPtr;
     char ch = tofree->ch;
     *headPtr = tofree->nextPtr;
     free(tofree);
