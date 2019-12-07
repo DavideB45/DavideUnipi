@@ -27,7 +27,7 @@ void head(int b, int h){
             printf(" ");
         }
         printf("*");
-        for(int z = 0; z <= b - space; z++){
+        for(int z = 0; z < b - space; z++){
             printf(" ");
         }
         space++;
