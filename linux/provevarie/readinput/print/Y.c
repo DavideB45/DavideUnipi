@@ -17,12 +17,12 @@ int main(void){
         while(getchar()!='\n');
     }
     head(base, hig);
-   // body(base, hig%2);
+    body(base, hig);
 }
 
 void head(int b, int h){
     int space = 0;
-    for(int i = 0; i < h; i++){
+    for(int i = 0; i < h/2+1; i++){
         for(int j = 0; j < space; j++){
             printf(" ");
         }
@@ -31,6 +31,16 @@ void head(int b, int h){
             printf(" ");
         }
         space++;
+        b--;
         printf("*\n");
+    }
+}
+
+void body(int b, int h){
+    for(int i = 0; i<h/2+1; i++){
+        for(int j = 0; j<b/2; j++){
+            printf(" ");
+        }
+        printf(" *\n");
     }
 }
