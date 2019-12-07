@@ -18,7 +18,7 @@ int main(void){
         printf("Errore nell' input\n");
         return 0;
     }
-    for(int i = 0; i<size/2; i++){
+    for(int i = 0; i<size/2-1; i++){
         push(&headPtr);
     }
     if(size%2==1){
