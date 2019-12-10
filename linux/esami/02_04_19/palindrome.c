@@ -30,7 +30,7 @@ int main(void){
         getchar();
     }
     //verifica della stringa
-    if(ceck(&headPtr)){
+    if(check(&headPtr)){
         printf("Stringa palindroma\n");
     } else {
         printf("Stringa non palindroma\n");
