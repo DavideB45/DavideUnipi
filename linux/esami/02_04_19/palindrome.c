@@ -11,7 +11,7 @@ typedef Lettera * LetPtr;
 
 char pop(LetPtr *headPtr);//restituisce l'elemem=nto in testa alla lista
 void push(LetPtr *headPtr);//aggiunge un elemento in testa alla lsta
-_Bool ceck(LetPtr *headPtr);//controlla che la parola sia palindroma
+_Bool check(LetPtr *headPtr);//controlla che la parola sia palindroma
 
 int main(void){
     int size;//dimensione della parola
@@ -62,7 +62,7 @@ char pop(LetPtr *headPtr){
     return ch;//valore contenuto nel nodo
 }
 
-_Bool ceck(LetPtr *headPtr){
+_Bool check(LetPtr *headPtr){
     char toverify = getchar();
     if(toverify=='\n'){
         return 1;//la parola e' palindroma
