@@ -4,12 +4,12 @@
 #include <ctype.h>
 #define ALFABETO 36
 
-//riempie i due alfabeti e restituisce il puntatore alla fine degli alfabeti
+//riempie la matrice con l'alfabeto morse
 void riempiCodice(FILE *fPtr, char *morse[]);
-//restrtuisce un puntatore ad una stringa letta fino a '\n'
+//restrtuisce un puntatore ad una stringa letta fino a '\r'
 char *readString(FILE *fPtr);
-//controlla che non vi siano caratteri non appartenenti all'alfabeto nella riga
-int controllo(char toceck);
+//controlla la riga (1=traducibile   0=non traducibile)
+_Bool controllo(FILE *fPtr);
 //traduce una riga di testo
 void traduzione(char *morse[], FILE *fPtr);
 
@@ -18,30 +18,25 @@ int main(void){
 	FILE *fPtr;//apertura file
 	if((fPtr = fopen("input.txt", "r"))==NULL){
 		printf("File not found\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	//lettura alfabeto da file
 	riempiCodice(fPtr, morse);
 	
-	char x ;
-	int traducibile;
+	_Bool traducibile;
 	long back;
 	while(!feof(fPtr)){
 		traducibile = 0;
 		back = ftell(fPtr);//salvo l'inizio della riga
-		//controlla che la riga possa essere tradotta
-		do{
-			fscanf(fPtr,"%c", &x);
-			traducibile = controllo(x);
-		}while(traducibile!=-1);
-		//ece dal wile quando trova uno '\r' o un errore nell'input
-		if(x=='\r'){//e' traducibile
+		traducibile = controllo(fPtr);//verifico che possa essere tradotta
+			
+		if(traducibile){//e' traducibile
 			fseek(fPtr, back, SEEK_SET);//torno a inizio riga
 			traduzione(morse, fPtr);
 		}
 		else{//non e' traducibile
-			fscanf(fPtr, "%*[^\n]\n");//salta la riga
+			fscanf(fPtr, "%*[^\n]\n");//salta la riga corrente
 			printf("Errore nell'input\n");
 		}
 	}
@@ -67,11 +62,15 @@ void riempiCodice(FILE *fPtr, char *morse[]){
 	while(fgetc(fPtr)!='\n');//toglie gli asterischi
 }
 
-int controllo(char toceck){
+_Bool controllo(FILE *fPtr){
+	char toceck = fgetc(fPtr);
 	if(toceck==' ' || isalnum(toceck)){
-		return 1;
+		return controllo(fPtr); 
 	}
-	return -1;
+	if(toceck=='\r'){
+		return 1;//puo' essere tradotta
+	}
+	return 0;//non puo' essere tradotta
 }
 
 void traduzione(char *morse[], FILE *fPtr){
