@@ -68,7 +68,7 @@ _Bool check(LetPtr *headPtr){
         return 1;//la parola e' palindroma
     } else {
         if(toverify == pop(headPtr)){
-            return ceck(headPtr);//chiamata ricorsiva
+            return check(headPtr);//chiamata ricorsiva
         } else {
             return 0;//la parola non e' palindroma
         }
