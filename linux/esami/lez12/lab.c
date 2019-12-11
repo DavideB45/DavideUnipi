@@ -18,25 +18,26 @@ int main(void){
     corso secondoAnno = NULL;
     
     getiscritti(&primoAnno, 0);
-    printf("Primo elenco\n");
+    printf("Primo elenco:\n");
     printlist(primoAnno);
     remduplicate(&primoAnno);
-    printf("Primo elenco senza duplicati\n");
+    printf("Primo elenco senza duplicati:\n");
     printlist(primoAnno);
     
     getiscritti(&secondoAnno, 0);
-    printf("Second elenco\n");
+    printf("Secondo elenco:\n");
     printlist(secondoAnno);
     remduplicate(&secondoAnno);
-    printf("Second elenco senza duplicati\n");
+    printf("Second elenco senza duplicati:\n");
     printlist(secondoAnno);
     
     filter(&primoAnno, secondoAnno);
     
-    printf("elenco finale\n");
+    printf("Primo elenco filtrato:\n");
     printlist(primoAnno);
-    //dealloc(&secondoAnno);
-    /**/
+    dealloc(&secondoAnno);
+    dealloc(&primoAnno);
+
     return EXIT_SUCCESS;
 }
 
