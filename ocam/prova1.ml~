@@ -63,16 +63,26 @@ let group list =
         |h::m::t -> 
         if h = m 
             then h::bros (m::t) 
-            else [h] 
+            else [h];;
 
+    let rec rembros = function
+        |[] -> []
+        |[a] -> [a]
+        |h::m::t ->
+            if h = m
+            then rembros (m::t)
+            else m::t;;
+            
     let rec aux m = function
         |[] -> m
-        |[a] -> m
+        |[a] -> [a]::m
         |a::b::tail -> 
             if a = b  
                 then aux ((bros (a::b::tail))::m) (rembros (b::tail))
-                else aux ([a]::m) (b::tail)          
+                else aux ([a]::m) (rembros (b::tail))          
         in aux [] list;;
+        (*funziona quasi toglie le cose diverse*)
+        (*forse ora va*)
             
             
             

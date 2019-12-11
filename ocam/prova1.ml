@@ -75,7 +75,7 @@ let group list =
             
     let rec aux m = function
         |[] -> m
-        |[a] -> m
+        |[a] -> [a]::m
         |a::b::tail -> 
             if a = b  
                 then aux ((bros (a::b::tail))::m) (rembros (b::tail))
@@ -84,12 +84,21 @@ let group list =
         (*funziona quasi toglie le cose diverse*)
         (*forse ora va*)
             
+(*------------------------------------------------------------------------------prova funzionale*)
+let rec c = function
+    (*t = a::_*)
+  	a::(b:: _ as t) -> 
+  	    if a = b 
+  	        then c t 
+  	        else a::c t
+    |s -> s;;
+
+c [1;2;2;1;3];;
+1;2;1;3; 
             
-            
-            
-            
-            
-            
+let a list =
+    match list with
+  	a::(b::_ as t) -> t;;      
             
             
             
