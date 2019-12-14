@@ -54,7 +54,7 @@ let rec compress = function
             
 (*------------------------------------------------------------------------------9*)
 (*Pack consecutive duplicates of list elements into sublists*)
-let group list = 
+
 
     let rec bros list =
     match list with
@@ -63,7 +63,7 @@ let group list =
         |h::m::t -> 
         if h = m 
             then h::bros (m::t) 
-            else [h];;
+            else [h]
 
     let rec rembros = function
         |[] -> []
@@ -71,8 +71,8 @@ let group list =
         |h::m::t ->
             if h = m
             then rembros (m::t)
-            else m::t;;
-            
+            else m::t
+let group list =         
     let rec aux m = function
         |[] -> m
         |[a] -> [a]::m
@@ -100,12 +100,66 @@ let a list =
     match list with
   	a::(b::_ as t) -> t;;      
             
+(*------------------------------------------------------------------------------reozione copie*)
+let copyremove  list =
+    let rec singleremove n = function
+        |[] -> []
+        |h::t -> 
+            if h = n
+                then singleremove n t
+                else h::singleremove n t
+     in
+     let rec auxremove = function
+        |[]->[]
+        |h::t -> h::auxremove (singleremove h t)
+     in
+     auxremove list;;
             
+(*------------------------------------------------------------------------------26*)  
+(*Generate the combinations of K distinct objects chosen from the N elements of a list.*)
+let mat l =
+    let rec g k n=
+        match k with 
+        [] -> []
+        |h::t -> [n;h]::g t n
+    in
+    let rec f = function
+        []-> []
+        |h::t-> (g t h) :: f t
+    in f l;;
+     
+(*------------------------------------------------------------------------------35*)
+(*Determine the prime factors of a given positive integer*)
+let factorino a =
+    let rec aux n lixt divisor=
+        if n = 1
+        then lixt 
+        else if not(n mod divisor <> 0)
+            then aux (n/divisor) (divisor::lixt) divisor
+            else aux n lixt (divisor+1)
+     in aux a [] 2;;
+
+
+(*------------------------------------------------------------------------------prove dal passato*)
+(*verificare che fa/dire il tipo*)
+ let rec filter test l =
+    match l with
+     [] -> []
+     | h::t -> if (test h) then h::(filter test t)
+            else filter test t;;            
             
-            
-            
-            
-            
+
+(*------------------------------------------------------------------------------*)
+(*what does it do?*)            
+let p l =
+    let rec aux curr acc = function
+    |[]->[]
+    |[x]->(x::curr)::acc
+    |a::(b::_ as t)->
+        if a = b
+            then aux (a::curr) acc t
+            else aux [] ((a::curr)::acc) t in
+    aux [] [] l;;          
             
             
             
