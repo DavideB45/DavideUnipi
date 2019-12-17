@@ -26,7 +26,7 @@ int main(void){
 	}
 
 	clock_t fine = clock();
-	print(DIM, array);
+	//print(DIM, array);
 	printf("\n\n%f\n", (double)(fine-inizio)/10000);
 	printf("tempo medio = %f\n", (double)(fine-inizio)/(CLOCKS_PER_SEC*10000));
 	printf("tempo totale = %f\n", (double)(fine-inizio)/CLOCKS_PER_SEC);
