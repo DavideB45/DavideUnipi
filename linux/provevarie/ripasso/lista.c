@@ -10,17 +10,23 @@ typedef Nodo *NodoPtr;
 void insertionsort(NodoPtr *head);
 void printlist(NodoPtr corrPtr);
 void removeduplicate(NodoPtr *head);
+void removechosen(NodoPtr *head);
 void ceck(void *Ptr);
+void clean(void);
 
 int main(void){
 	NodoPtr headPtr = NULL;
 	
 	for (size_t i = 0; i < 9; i++){
+		printf("Metti ancora %ld numeri : ", 9-i);
 		insertionsort(&headPtr);
 	}
 	printlist(headPtr);
 	
 	removeduplicate(&headPtr);
+	printlist(headPtr);
+
+	removechosen(&headPtr);
 	printlist(headPtr);
 
 	return 0;
@@ -33,17 +39,24 @@ void ceck(void *Ptr){
 	}
 }
 
+void clean(void){
+	scanf("%*[^\n]");
+	scanf("%*c");
+}
+
 void insertionsort(NodoPtr *head){
-	NodoPtr newPtr = calloc(1, sizeof(Nodo));
+	
 	NodoPtr corrPtr = (*head);
 	NodoPtr precPtr = NULL;
+	NodoPtr newPtr = calloc(1, sizeof(Nodo));
+	ceck(newPtr);
 
 	while (scanf("%d", &(newPtr->num))!=1){
 		printf("UN NUMERO INTERO : ");
-		scanf("%*[^\n]");
-		scanf("%*c");
+		clean();
 	}
-	ceck(newPtr);
+	clean();
+
 	while(corrPtr != NULL  &&  corrPtr->num < newPtr->num){
 		precPtr = corrPtr;
 		corrPtr = corrPtr->nextPtr;
@@ -80,4 +93,34 @@ void removeduplicate(NodoPtr *head){
 			corrPtr = corrPtr->nextPtr;
 		}
 	}
+}
+
+void removechosen(NodoPtr *head){
+	int num;
+	printf("metti il numero che vuoi togliere : ");
+	while(scanf("%d", &num)!=1){
+		printf("il numero non va bene : ");
+		clean();
+	}
+	clean();
+	
+	NodoPtr corrPtr = (*head);
+	NodoPtr precPtr = NULL;
+	while(corrPtr!=NULL && corrPtr->num!=num){
+		precPtr = corrPtr;
+		corrPtr = corrPtr->nextPtr;
+	}
+
+	if(corrPtr==NULL){
+		printf("Numero non trovato\n");
+	} else {
+		if(precPtr==NULL){
+			*head = corrPtr->nextPtr;
+		} else {
+			precPtr->nextPtr = corrPtr->nextPtr;
+		}
+		free(corrPtr);
+		printf("Numero rimosso\n");
+	}
+	
 }
