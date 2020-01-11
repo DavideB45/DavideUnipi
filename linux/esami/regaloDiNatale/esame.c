@@ -1,27 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int readInt(void);
+void fillArray(int dim, int array[dim]);
 
 int main(void){
 	int colonne;
 	printf("Inserire numero gare : ");
-	while (scanf("%d", &colonne)!=1){
-		while(getchar()!='\n');
-	}
-	while(getchar()!='\n');
+	colonne = readInt();
 
 	int array[colonne];
 	int tot_sfide = 0;
 
+	fillArray(colonne, array);
 
-	//inserimento sfide
-	for (size_t i = 0; i < colonne; i++){
-		printf("Inserire codice sfida : ");
-		while (scanf("%d", &array[i])!=1){
-			while(getchar()!='\n');
-		}
-		while(getchar()!='\n');
-	}
 	//creazione funzione per trovare l'indice della sfida
 	for(int i = 0; i < colonne; i++){
 		if(array[i]>0){
@@ -42,10 +34,7 @@ int main(void){
 
 	int partecipanti;
 	printf("inserire il numero di sfidanti : ");
-	while(scanf("%d", &partecipanti)!=1){
-		while(getchar()!='\n');
-	}
-	while(getchar()!='\n');
+	partecipanti = readInt();
 	
 	//creazione griglia pulita
 	int punti;
@@ -60,9 +49,8 @@ int main(void){
 	for(int i = 0; i < partecipanti; i++){
 		//riempimento dei punteggi di uno uomo
 		for (size_t j = 0; j < colonne; j++){
-			while (scanf("%d", &punti)!=1){
-				while(getchar()!='\n');
-			} getchar();
+			printf("inserire gara %d del giocatore %d : ", i, j);
+			colonne = readInt();
 			//printf("punti = %d\nindice i = %d\n/array[j] = %d\n", punti, i, -array[j]);
 			griglia_punteggi[i][-array[j]] += punti;
 		}	
@@ -77,4 +65,23 @@ int main(void){
 	}
 
 	
+}
+
+
+int readInt(void){
+	int number;
+	while (scanf("%d", &number)!=1){
+		while(getchar()!='\n');
+	}
+	while(getchar()!='\n');
+	return number;
+}
+
+void fillArray(int dim, int array[dim]){
+	//inserimento sfide
+	for (size_t i = 0; i < dim; i++){
+		printf("Inserire codice sfida : ");
+		array[i] = readInt();
+	}
+	return;
 }
