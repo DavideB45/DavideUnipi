@@ -30,8 +30,9 @@ int main(void){
 int readInt(void){
 	int num;
 	while(scanf("%d", &num)!=1){
+		printf("input error\n");
 		while(getchar()!='\n');		
-	} while(getchar()!='\n');
+	}
 	return num;
 }
 
