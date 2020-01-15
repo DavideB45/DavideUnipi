@@ -51,6 +51,7 @@ NodoPtr gaveNpointer(NodoPtr *headPtr,NodoPtr precPtr, int a_node);
 ////////////////////////////////////////////////////////////////////////////////
 
 int main(){
+
 	NodoPtr headPtr = NULL;
 	
 	int j = insort(&headPtr);
