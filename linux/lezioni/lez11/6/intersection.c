@@ -9,21 +9,25 @@ typedef Nodo *NodoPtr;
 
 int readInt(void);
 _Bool insert(NodoPtr *headPtr);
-NodoPtr fusion(NodoPtr *h1Ptr, NodoPtr *h2Ptr);
+void fusion(NodoPtr *h1Ptr, NodoPtr *h2Ptr);
 void printlist(NodoPtr corrPtr);
 void freelist(NodoPtr corrPtr);
 
 int main(void){
+	
 	NodoPtr h1Ptr = NULL;
-	while(&h1Ptr);
+	while(insert(&h1Ptr));
+	//printlist(h1Ptr);
+
 	NodoPtr h2Ptr = NULL;
-	while(&h2Ptr);
+	while(insert(&h2Ptr));
+	//printlist(h2Ptr);
 
-	NodoPtr fusPtr = fusion(h1Ptr, h2Ptr);
+	fusion(&h1Ptr, &h2Ptr);
 
-	printlist(fusPtr);
+	printlist(h1Ptr);
 
-	freelist(fusPtr);
+	freelist(h1Ptr);
 	
 	return 0;
 }
@@ -35,8 +39,8 @@ int readInt(void){
 		scanf("%*[\n]");
 		scanf("%*c");
 	}
-	scanf("%*[\n]");
-	scanf("%*c");
+//	scanf("%*[\n]");
+//	scanf("%*c");
 	return num;
 }
 
@@ -66,17 +70,63 @@ _Bool insert(NodoPtr *headPtr){
 	}
 }
 
-NodoPtr fusion(NodoPtr *h1Ptr, NodoPtr *h2Ptr){
-	if((*h1Ptr)->val < (*h2Ptr)->val){
-		NodoPtr start =	*h2Ptr;
+void fusion(NodoPtr *h1Ptr, NodoPtr *h2Ptr){
+	NodoPtr start;
+	if(*h2Ptr==NULL){
+		return;
 	} else {
-		NodoPtr start = *h2Ptr;
-	}
-	NodoPtr tempPtr;
-	while((*h1Ptr)!=NULL && (*h2Ptr!=NULL)){
-		if((*h1Ptr)->val < (*h2Ptr)->val){
-			
+		if(*h1Ptr==NULL){
+			*h1Ptr = *h2Ptr;
+			return;
 		}
 	}
 	
+	if((*h1Ptr)->val < (*h2Ptr)->val){
+		start =	*h1Ptr;
+	} else {
+		start = *h2Ptr;
+	}
+	NodoPtr tempPtr;
+	NodoPtr precPtr = NULL;
+	while((*h1Ptr)!=NULL && (*h2Ptr!=NULL)){
+		if((*h1Ptr)->val < (*h2Ptr)->val){
+			precPtr = *h1Ptr;
+			*h1Ptr = (*h1Ptr)->nextPtr;
+		} else {
+			tempPtr = (*h2Ptr)->nextPtr;
+			(*h2Ptr)->nextPtr = *h1Ptr;
+			if(precPtr!=NULL){
+				precPtr->nextPtr = *h2Ptr;
+				(*h2Ptr)->nextPtr = *h1Ptr;
+				precPtr = *h2Ptr;
+			} else {
+				precPtr = *h2Ptr;
+			}
+			*h2Ptr = tempPtr;
+		}
+	}
+	if(*h1Ptr==NULL){
+		*h1Ptr = start;
+		while((*h1Ptr)->nextPtr!=NULL){
+			*h1Ptr = (*h1Ptr)->nextPtr;
+		}
+		(*h1Ptr)->nextPtr = *h2Ptr;
+	}
+	*h1Ptr = start;
+}
+
+void printlist(NodoPtr corrPtr){
+	while (corrPtr!= NULL){
+		printf("%d --> ", corrPtr->val);
+		corrPtr = corrPtr->nextPtr;
+	} printf("NULL\n");
+}
+
+void freelist(NodoPtr corrPtr){
+	NodoPtr tofree = corrPtr;
+	while (corrPtr!=NULL){
+		tofree = corrPtr;
+		corrPtr = corrPtr->nextPtr;
+		free(tofree);	
+	}
 }
