@@ -9,18 +9,37 @@ typedef struct nodo{
 } Nodo;
 typedef Nodo *NodoPtr;
 
+typedef struct val{
+	int val;
+	struct val *nextPtr;
+} Val;
+typedef Val *ValPtr;
+
+
+
 int readint(void);;;
 void ceckPtr(void *Ptr);
 NodoPtr addnew(int value);//genera un nodo
-void link(NodoPtr A, NodoPtr B);//lega 2 nodi
+void pushV(ValPtr *headPtr, int commonvalue);//per la lista di pos comuni
 
+
+
+void printcommon(ValPtr corrPtr);//stampa lista Val
 void printList(NodoPtr corrPtr);//stampa la lista ordinata
 void printarray(int dim, int *array);//stampa un array di numeri
+void freelist(ValPtr *corrPtr);
+void freestruct(NodoPtr *corrPtr);
 
+
+//so muove dovunque si possa arrivare con move_of spostamenti
 void movefrof(NodoPtr startPtr, int move_of, int *stati, int *array, int prec);
-int findcommon(int dim1, int *array1, int dim2, int*array2);
+//crea una lista con elementi comuni a 2 array
+ValPtr findcommon(int dim1, int *array1, int dim2, int*array2);
 
 
+
+//lega 2 nodi
+void link(NodoPtr A, NodoPtr B);
 //crea una lista ordinata dei nodi e ne collega due alla volta
 int insort(NodoPtr *headPtr);
 //cerca un numero e restituisce il puntatore al nodo precedente
@@ -70,7 +89,13 @@ int main(){
 	movefrof(start, of, &stati_B, array_B, -1);
 	printarray(stati_B, array_B);
 
-	printf("si possono incontrare in %d\n", findcommon(stati_B, array_B, stati_A, array_A));
+	ValPtr commonList = findcommon(stati_B, array_B, stati_A, array_A);
+	printcommon(commonList);
+
+	free(array_A);
+	free(array_B);
+	freelist(&commonList);
+	freestruct(&headPtr);
 
 	return 0;
 }
@@ -101,6 +126,31 @@ NodoPtr addnew(int value){
 	return new;
 }
 
+void pushV(ValPtr *headPtr, int commonvalue){
+	ValPtr  newPtr = calloc(1, sizeof(Val));
+	ceckPtr(newPtr);
+	newPtr->val = commonvalue;
+	newPtr->nextPtr = (*headPtr);
+	*headPtr = newPtr;
+}
+
+void freelist(ValPtr *corrPtr){
+	ValPtr tofree;
+	while((*corrPtr)!=NULL){
+		tofree = (*corrPtr);
+		(*corrPtr) = (*corrPtr)->nextPtr;
+		free(tofree);
+	}
+}
+void freestruct(NodoPtr *corrPtr){
+	NodoPtr tofree;
+	while((*corrPtr)!=NULL){
+		tofree = (*corrPtr);
+		(*corrPtr) = (*corrPtr)->orderPtr;
+		free(tofree);
+	}
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -112,6 +162,13 @@ void printList(NodoPtr corrPtr){
 		}
 		corrPtr = corrPtr->orderPtr;
 	}
+}
+
+void printcommon(ValPtr corrPtr){
+	while(corrPtr!=NULL){
+		printf("%d->", corrPtr->val);
+		corrPtr = corrPtr->nextPtr;
+	} printf("NULL\n");
 }
 
 void printarray(int dim, int *array){
@@ -155,7 +212,7 @@ NodoPtr gaveNpointer(NodoPtr *headPtr,NodoPtr prec_Ptr, int a_node){
 			(*headPtr) = prec_Ptr;//modifico la head
 		} else {
 		//il numero c'e' ma devo spostare il puntatore
-			prec_Ptr = prec_Ptr->orderPtr;
+			prec_Ptr = (*headPtr);
 		}
 		
 	} else {// modifica nel mezzo o in coda
@@ -212,43 +269,21 @@ void movefrof(NodoPtr startPtr, int move_of, int *stati, int *array, int prec){
 	}
 }
 
-int findcommon(int dim1, int *array1, int dim2, int*array2){
+ValPtr findcommon(int dim1, int *array1, int dim2, int*array2){
+	ValPtr headPtr = NULL;
+	ValPtr corrPtr = NULL;
 	for (size_t i = 0; i < dim1; i++){
 		for(int j = 0; j < dim2; j++){
 			if(array1[i]==array2[j]){
-				return array2[j];
+				corrPtr = headPtr;
+				while(corrPtr!=NULL && corrPtr->val!=array1[i]){
+					corrPtr = corrPtr->nextPtr;
+				}
+				if(corrPtr==NULL){
+					pushV(&headPtr, array1[i]);
+				}
 			}
 		}
 	}
-	return -1;
+	return headPtr;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
