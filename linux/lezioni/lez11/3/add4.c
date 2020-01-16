@@ -86,5 +86,5 @@ void printlist(NodoPtr corrPtr)
 	{
 		printf("%d -> ", corrPtr->num);
 		corrPtr = corrPtr->nextPtr;
-	} printf("\n");
+	} printf("NULL\n");
 }

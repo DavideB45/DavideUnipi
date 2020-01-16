@@ -22,7 +22,7 @@ int main(void){
 	addforgotten(headPtr);
 	printlist(headPtr);
 
-/*	freelist(headPtr);*/
+	freelist(headPtr);
 	return 0;
 }
 
@@ -90,4 +90,14 @@ void addforgotten(NodoPtr corrPtr){
 			}
 		}
 	}
+}
+
+void freelist(NodoPtr corrPtr){
+	NodoPtr tofree;
+	while(corrPtr!=NULL){
+		tofree = corrPtr;
+		corrPtr = corrPtr->nextPtr;
+		free(tofree);
+	}
+	
 }

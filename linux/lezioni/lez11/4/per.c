@@ -20,14 +20,14 @@ void printlist(NodoPtr corrPtr);
 int main(){
 	int inizio = readInt();
 	int fine = readInt();
-	printf("Inizia a mettere la lista : \n");
+	//printf("Inizia a mettere la lista : \n");
 	NodoPtr headPtr = NULL;
 	while(insort(&headPtr));
-	printlist(headPtr);
+	//printlist(headPtr);
 	removeduplicate(headPtr);
-	printlist(headPtr);
+	//printlist(headPtr);
 	int prod = prodotto(inizio, fine, headPtr);
-	printf("il prodotto vale : %d\n", prod);
+	printf(/*il prodotto vale : */"%d\n", prod);
 	freee(&headPtr);
 	return 0;
 }
@@ -121,12 +121,12 @@ int prodotto(int inizio, int fine, NodoPtr corrPtr){
 	} else {
 		int per = 1;
 		while(corrPtr!=NULL && corrPtr->value <= inizio){
-			printf("%d->\n", corrPtr->value);
+			//printf("%d->\n", corrPtr->value);
 			corrPtr = corrPtr->nextPtr;
 		}
-		printf("\n");
+		//printf("\n");
 		while(corrPtr!=NULL && corrPtr->value < fine){
-			printf("%d->\n", corrPtr->value);
+			//printf("%d->\n", corrPtr->value);
 			per = per*(corrPtr->value);
 			corrPtr = corrPtr->nextPtr;
 		}
