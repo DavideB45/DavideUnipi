@@ -17,7 +17,7 @@ int main(void){
 	
 	NodoPtr headPtr = NULL;
 	while(revinsert(&headPtr));
-	printlist(headPtr);
+	//printlist(headPtr);
 
 	addforgotten(headPtr);
 	printlist(headPtr);
@@ -38,9 +38,9 @@ int readInt(void){
 
 void printlist(NodoPtr corrPtr){
 	while (corrPtr!=NULL){
-		printf("%d -> ", corrPtr->num);
+		printf("%d --> ", corrPtr->num);
 		corrPtr = corrPtr->nextPtr;
-	} printf("fine::\n");
+	} printf("NULL\n");
 	
 }
 
