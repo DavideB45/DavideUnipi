@@ -31,7 +31,7 @@ print(x_files)
 stacca()##########################
 ##################################
 l1 = "pollo"
-#devo fare i cast anche s di base e' una union...
+#devo fare i cast anche se di base e' una union...
 l1 = list(l1)
 #senza l2 era un mero puntatore qundi girava ance l1
 l2 = list(l1)
