@@ -26,9 +26,10 @@ contacts = {
 	'jack': {'phone': '321-345-6', 'email': 'ja@gjoe.com'}
 }
 print(contacts['joe']['email'])
+print('')
 
 #dict.items() = gave a list of touple an each touple is a value and a key
-#dict.keys() = geve a list ogf just the keys
+#dict.keys() = geve a list of just the keys
 #dict.values() = gave a list of just the values
 
 #add item write the key in [] and all the other values after the = 
@@ -50,8 +51,12 @@ print('')
 print(dictionary)
 x_element = dictionary.popitem()
 print(dictionary)
+x_element = dictionary.popitem()
+print(dictionary)
+x_element = dictionary.popitem()
+print(dictionary)
 print(x_element)
-
+ 
 #dict.clear = rimuove tutti gli elementi
 
 
