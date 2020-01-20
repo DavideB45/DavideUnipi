@@ -15,7 +15,5 @@ person3 = ("armando", 2, "plastica")
 population = [person1, person2, person3, person7]
 
 for name, age, favfood in population:
-	print(name)
-	print(age)
-	print(favfood)
+	print(name, age, favfood)
 	print('')

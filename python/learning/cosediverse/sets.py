@@ -9,9 +9,10 @@ s.add("ananas")
 s.add("blueberry")#non fa nulla
 
 #rimuovere duplicati da una lista
-l = [1, 2, 3, 1, 1, 2, 4, 5, 4, 5, 5, 2]
+l = [2, 3, 1, 2, 3, 1, 1, 2, 4, 5, 4, 5, 5, 2]
 no_duplicate = set(l)
 l = list(no_duplicate)
+print(l)
 
 #insiemi
 library_1 = {'Harry potter', 'Hunger Games', '22.11.63', 'Dracula'}
