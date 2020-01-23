@@ -28,9 +28,8 @@ def fill_matrix():
 	matr = [[0]*col for i in range(row)]
 	for i in range(row):
 		x = raw_input('inserisci riga : ')#legge la riga
-		matr[i] = list(x)#la salva trasformandola in una lista
-		matr[i].remove(' ')#toglie gli spazi
-		matr[i].remove('\r')#toglie il carattere finale
+		x = x.partition('\r')[0]
+		matr[i] = x.split(' ')
 	#ritorno tutte le informazioni sulla matrice in una tupla
 	return (matr, row, col)
 
@@ -42,3 +41,5 @@ if (a_col*a_row <= b_col*b_row):
 	print(find_A_in_B(A, B))
 else:
 	print(find_A_in_B(B, A))
+	#return 0
+#}
