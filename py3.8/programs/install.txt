@@ -1,0 +1,8 @@
+//questo non serve
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+//questo sì
+.venv\scripts\activate
+python -m pip install beautifulsoup4
+//alla fine 
+deactivate
