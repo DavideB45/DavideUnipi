@@ -29,6 +29,7 @@ legenda = {
 }
 giorno = ['oggi', 'domani', 'dopodomani']
 
+print('\n')
 days = soup.find_all(id='massa')
 proxi_future = days.__len__()
 for i in range(proxi_future):
@@ -44,5 +45,3 @@ for i in range(proxi_future):
 	else:
 		print()
 i = input('premere invio alla fine!')
-while True:
-	i = i
