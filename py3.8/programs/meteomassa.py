@@ -43,3 +43,4 @@ for i in range(proxi_future):
 		print('\n------------------\n')
 	else:
 		print()
+i = input('premere invio alla fine!')
