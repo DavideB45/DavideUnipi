@@ -44,3 +44,5 @@ for i in range(proxi_future):
 	else:
 		print()
 i = input('premere invio alla fine!')
+while True:
+	i = i
