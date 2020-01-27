@@ -105,7 +105,7 @@ void filter(corso *primoAnno, corso secondoAnno){
                 filter(&((*primoAnno)->nextPtr), secondoAnno);
             } else {
                 filter(primoAnno, secondoAnno->nextPtr);
-            }
+        	}
         }
     }
 }

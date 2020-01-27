@@ -52,8 +52,8 @@ void print(int array[DIM]){
 int ricercabinaria(int *array, int ricercato){
 	_Bool found = 0;
 	int sx = 0, dx = DIM, mezzo;
-	//                     sx+1 != dx
-	while(  (!found)  &&  (sx   <  dx)  ){
+	
+	while(  (!found)  &&  (sx+1 != dx)  ){
 		mezzo = (dx+sx)/2;
 		if(array[mezzo] > ricercato){
 			dx = mezzo;
