@@ -37,6 +37,7 @@ def best_d(string):
 	tempo.insert(2, 'min')
 	tempo.insert(1, 'h')
 	string[2] = ' '.join(tempo)
+	string.insert(0,'Mancano')
 	return ' '.join(string)
 
 
@@ -71,7 +72,7 @@ def main():
 		if delta[0] == '1':
 			print('domani bro!')
 		else:
-			print(' '.join([delta[0],"days"]))
+			print(' '.join(['Mancano ',delta[0],"days"]))
 
 
 
