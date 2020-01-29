@@ -62,8 +62,8 @@ def main():
 		evento = inizio_uni
 
 	if orario == True:
-		ora = datetime.now()
-		delta = calcola_diff(evento, ora)
+		adesso = datetime.now()
+		delta = calcola_diff(evento, adesso)
 		print(delta)
 	else :
 		adesso = datetime.date(datetime.now())
@@ -72,7 +72,7 @@ def main():
 		if delta[0] == '1':
 			print('domani bro!')
 		else:
-			print(' '.join(['Mancano ',delta[0],"days"]))
+			print(' '.join(['Mancano ',delta[0],"giorni"]))
 
 
 
