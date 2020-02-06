@@ -22,8 +22,8 @@ def find_A_in_B(A, B):
 
 #crea e riempie una matice
 def fill_matrix():
-	row = int(raw_input('inserisci il numero di colonne : ' ))
-	col = int(raw_input('inserisci il numero di righe : '))
+	row = int(raw_input('inserisci il numero di righe : ' ))
+	col = int(raw_input('inserisci il numero di colonne : '))
 	#creo e inizializzo una matrice
 	matr = [[0]*col for i in range(row)]
 	for i in range(row):
