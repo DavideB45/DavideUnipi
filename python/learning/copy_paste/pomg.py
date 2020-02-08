@@ -6,15 +6,14 @@ wn.bgcolor("black")
 wn.setup(width=450, height=600)
 wn.tracer(0)
 
-
 #ball
 ball = turtle.Turtle()
 ball.penup()
 ball.speed(0)
 ball.shape("square")
 ball.color("white")
-ball.dx = 0.1
-ball.dy = 0.1
+ball.dx = 0.15#velocita' x
+ball.dy = 0.13#velocita' y
 
 #paddle_a (sx)
 p_a = turtle.Turtle()
@@ -51,8 +50,33 @@ wn.onkey(a_dawn, "s")
 wn.onkey(b_up, "Left")
 wn.onkey(b_dawn, "Right")
 
-#def op_b():
-#	y = 
+def next_hit(padella):
+#spostamento =  vy/vx      *     distanza      
+	dy = (ball.dy/abs(ball.dx))*(p_b.xcor()*2)
+
+	#se va verso l'alto
+	if (dy > 0):
+		#se itta sopra
+		if (dy > wn.window_height()/2 - ball.ycor()):
+			dy2 = dy - (wn.window_height()/2 - ball.ycor())
+			yf = wn.window_height()/2 - dy2
+		#se non itta
+		else :
+			dy2 = dy
+			yf = ball.ycor() + dy2
+	#se va verso il basso
+	else:
+		#se itta sotto
+		if (dy < -(wn.window_height()/2 + ball.ycor())):
+			dy2 = wn.window_height()/2 + (dy + ball.ycor())
+			yf = -(wn.window_height()/2 + dy2)
+		#se non itta
+		else:
+			dy2 = dy
+			yf = ball.ycor() + dy2
+
+	print(" ".join(["dy =", str(dy),"dy2 =", str(dy2), "yf =", str(yf)]))
+	padella.sety(yf)
 
 exit = False
 while not exit:
@@ -67,9 +91,11 @@ while not exit:
 		ball.dy *= -1
 	if(ball.xcor() + 10 > p_b.xcor() and ball.ycor() < p_b.ycor() + 50 and ball.ycor() > p_b.ycor() - 50 ):
 		ball.dx *= -1
+		next_hit(p_a)
 	if(ball.xcor() - 10 < p_a.xcor() and ball.ycor() < p_a.ycor() + 50 and ball.ycor() > p_a.ycor() - 50 ):
 		ball.dx *= -1
+		next_hit(p_b)
 	
 	if(abs(ball.xcor()) > 180):
 		ball.goto(0,0)
-		exit = True
+		ball.dx *= -1
