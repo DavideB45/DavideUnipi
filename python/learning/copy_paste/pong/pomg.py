@@ -12,7 +12,7 @@ ball.penup()
 ball.speed(0)
 ball.shape("square")
 ball.color("white")
-ball.dx = 0.15#velocita' x
+ball.dx = 0.9#velocita' x
 ball.dy = 0.13#velocita' y
 
 #paddle_a (sx)
@@ -33,6 +33,7 @@ p_b.color("white")
 p_b.shapesize(stretch_wid=5, stretch_len=1)
 p_b.goto(180, 0)
 
+
 def a_up():
 	p_a.sety(p_a.ycor() + 20)
 def a_dawn():
@@ -46,6 +47,7 @@ def b_dawn():
 wn.listen()
 wn.onkey(a_up, "w")
 wn.onkey(a_dawn, "s")
+
 
 wn.onkey(b_up, "Left")
 wn.onkey(b_dawn, "Right")
