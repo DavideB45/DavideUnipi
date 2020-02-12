@@ -1,4 +1,4 @@
-from obj import pn
+from obj import *
 import pygame
 import os
 

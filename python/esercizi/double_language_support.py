@@ -52,7 +52,7 @@ def create_phrase(dictionary, lista):
 
 #int main(void):
 #scelta della lingua
-choise = raw_input('pick a language [en][it] ')
+choise = raw_input('Pick a language... Any language [en][it] ')
 choise = list(choise)[0] + list(choise)[1]
 if choise == 'en':
 	curr_dictionary = en_dictionary
