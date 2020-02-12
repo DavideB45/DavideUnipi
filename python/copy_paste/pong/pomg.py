@@ -1,4 +1,5 @@
 import turtle
+import random
 
 wn = turtle.Screen()
 wn.title("PONG")
@@ -12,8 +13,10 @@ ball.penup()
 ball.speed(0)
 ball.shape("square")
 ball.color("white")
-ball.dx = 0.9#velocita' x
-ball.dy = 0.13#velocita' y
+
+ball.dx = 0.4 + random.randint(-1,1)/10#velocita' x
+ball.dy = 0.4 + random.randint(-1,1)/10#velocita' y
+speed = 0.245 #velo paletta "0.26 = difficilissimo"
 
 #paddle_a (sx)
 p_a = turtle.Turtle()
@@ -80,13 +83,21 @@ def next_hit(padella):
 	print(" ".join(["dy =", str(dy),"dy2 =", str(dy2), "yf =", str(yf)]))
 	padella.sety(yf)
 
+def game(paletta):
+	if paletta.ycor() < ball.ycor():
+		paletta.sety(paletta.ycor() + speed)
+	else:
+		paletta.sety(paletta.ycor() - speed)
+		
+
 exit = False
 while not exit:
 	wn.update()
 	
 	ball.sety(ball.ycor() + ball.dy)
 	ball.setx(ball.xcor() + ball.dx)
-
+#	game(p_a)
+	game(p_b)
 	wn.update()
 
 	if(abs(ball.ycor()) + 10 > wn.window_height()/2):
@@ -96,7 +107,7 @@ while not exit:
 		next_hit(p_a)
 	if(ball.xcor() - 10 < p_a.xcor() and ball.ycor() < p_a.ycor() + 50 and ball.ycor() > p_a.ycor() - 50 ):
 		ball.dx *= -1
-		next_hit(p_b)
+#		next_hit(p_b)
 	
 	if(abs(ball.xcor()) > 180):
 		ball.goto(0,0)
