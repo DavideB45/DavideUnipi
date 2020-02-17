@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int readInt(void);
+_Bool is_first(int);
+
+int main(void){
+    int num = readInt();
+    printf("%d", is_first(num));
+}
+
+int readInt(void){
+    int num;
+    while(scanf("%d", &num) != 1 || num < 0){
+        printf("inserire un intero positivo");
+        scanf("%^[\n]");
+        scanf("%c");
+    }
+    return num;
+}
+
+_Bool is_first(int num){
+    int divisore = 2;
+    while(num % divisore != 0 && divisore < num/2){
+        divisore++;
+    }
+    return !(divisore < num/2);
+}

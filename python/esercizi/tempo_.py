@@ -58,7 +58,7 @@ def main():
 			orario = False
 			evento = datetime.date(datetime(anno, mese, giorno))
 	else:
-		inizio_uni = datetime(2020, 2, 17, 9)
+		inizio_uni = datetime(2020, 2, 17, 14)
 		evento = inizio_uni
 
 	if orario == True:
