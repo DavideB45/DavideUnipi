@@ -1,6 +1,7 @@
 import pygame
 import random
 import os
+import time
 
 
 pygame.init()
@@ -42,7 +43,7 @@ class tubi:
 	def ceck_hit(self, y_pos):
 		b_dx = 5 + bird.get_width() #bestia a dx
 		b_sx = 5#bestia a sx
-		print(self.y - 160, int(y_pos), self.y)
+		#print(self.y - 160, int(y_pos), self.y)
 		#controllo altezza
 		if y_pos + bird.get_height() > self.y or y_pos < self.y -160:
 			#controllo larghezza
@@ -121,7 +122,7 @@ def update_wn():
 	pygame.display.update()
 	#pygame.time.Clock.time(FPS)
 
-#per redere tutto piu' bello
+#per renedere tutto piu' bello
 #record = 1500
 def ceet():
 	if y_pos + 60 > ostacoli[0].y:
@@ -131,6 +132,7 @@ def ceet():
 
 go_on = True
 while go_on:
+	mills = int(round(time.time()*1000))
 	y_pos += v_y#caduta
 	x_pos -= v_x#avanzamento
 	if x_pos < -100:
@@ -139,7 +141,8 @@ while go_on:
 	update_wn()
 	draw()
 	#ceet
-	ceet()
+	if mills%10 == 0:
+		ceet()
 	#controllo per uscire dal gioco e saltare
 	for event in pygame.event.get():
 		if event.type == pygame.KEYDOWN:

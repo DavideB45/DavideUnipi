@@ -97,7 +97,7 @@ while not exit:
 	ball.sety(ball.ycor() + ball.dy)
 	ball.setx(ball.xcor() + ball.dx)
 #	game(p_a)
-	game(p_b)
+#	game(p_b)
 	wn.update()
 
 	if(abs(ball.ycor()) + 10 > wn.window_height()/2):
@@ -107,7 +107,7 @@ while not exit:
 		next_hit(p_a)
 	if(ball.xcor() - 10 < p_a.xcor() and ball.ycor() < p_a.ycor() + 50 and ball.ycor() > p_a.ycor() - 50 ):
 		ball.dx *= -1
-#		next_hit(p_b)
+		next_hit(p_b)
 	
 	if(abs(ball.xcor()) > 180):
 		ball.goto(0,0)
