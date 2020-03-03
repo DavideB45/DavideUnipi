@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char* product(char *str, int k);
 char *readStr();
@@ -9,7 +10,7 @@ int main(void){
 	char *str = readStr();
 	int num = readInt();
 	char *mult = product(str, num);
-	printf("%s", mult);
+	printf("%s\n", mult);
 
 	free(str);
 	free(mult);
@@ -43,5 +44,10 @@ char *readStr(){
 }
 
 char* product(char *str, int k){
-	char *
+	int len = strlen(str);
+	char *prod = malloc((len + 1)*sizeof(char));
+	for (size_t i = 0; i < len*k; i++){
+		prod[i] = str[i%len];
+	}
+	return prod;
 }
