@@ -1,22 +1,41 @@
 import turtle
 
-line = turtle.Turtle()
+turtle.bgcolor("black")
+X = turtle.Turtle()
 
-def to_early_for_recursion(distance, iter_N):
-	if iter_N > 1:
-		line.right(45)
-		line.forward(distance)
-		iter_N = iter_N - 1
-		to_early_for_recursion(distance/3, iter_N)
-		iter_N = iter_N + 1
-		line.right(180)
-		line.forward(distance)
-		iter_N = iter_N - 1
-		to_early_for_recursion(distance/3, iter_N)
-		return
-	else:
-		return
+def draw_right(pen, space):
+	pen.right(45)
+	pen.forward(space)
+
+def draw_left(pen, space):
+	pen.left(90)
+	pen.forward(space)
+	
+def draw(pen, lenght, time):
+	if(time > 0):
+	####destra
+		#pen.color("black")
+		draw_right(pen, lenght)
+		draw(pen, lenght/1.5, time - 1)
+	####indietro_dx
+		#pen.color("blue")
+		pen.back(lenght)
+	####sinistra
+		#pen.color("black")
+		draw_left(pen, lenght)
+		draw(pen, lenght/1.5, time - 1)
+	####indietro_sx
+		#pen.color("green")
+		pen.back(lenght)
+		pen.right(45)
 
 
+X.color("white")
+X.speed("fastest")
 
-to_early_for_recursion(300, 10)
+draw(X, 100, 10)
+X.right(180)
+draw(X, 100, 10)
+
+
+p = input()
