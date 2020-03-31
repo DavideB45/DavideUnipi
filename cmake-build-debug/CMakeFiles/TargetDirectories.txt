@@ -1,0 +1,3 @@
+/home/davide/git/DavideUnipi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/davide/git/DavideUnipi/cmake-build-debug/CMakeFiles/DavideUnipi.dir
+/home/davide/git/DavideUnipi/cmake-build-debug/CMakeFiles/edit_cache.dir

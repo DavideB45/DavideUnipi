@@ -50,11 +50,24 @@ void swap(int *piv, int *index, int *number_before){
 }
 
 void quickSort(int *array, int inizio, int fine){
-
+    if(fine - inizio >=  1){
+        //printf("inizio = %d fine = %d\n", inizio, fine);
+        int index = fine - 1, piv_pos = fine;
+        while(index >= inizio){
+            if(array[index] > array[piv_pos]){
+                swap(array + piv_pos, array + index, array + piv_pos - 1);
+                piv_pos--;
+            }
+            index--;
+        }
+        //printf("piv = %d  p_pos = %d\n", array[piv_pos], piv_pos);
+        quickSort(array, inizio, piv_pos - 1);
+        quickSort(array, piv_pos + 1, fine);
+    }
 }
 
 void printArray(int dim, int *array){
     for (size_t i = 0; i < dim; i++){
         printf("%d ", array[i]);
-    } printf("\n");
+    }// printf("\n");
 }

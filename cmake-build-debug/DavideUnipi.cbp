@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="DavideUnipi"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/davide/git/DavideUnipi/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/davide/git/DavideUnipi/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DavideUnipi">
+				<Option output="/home/davide/git/DavideUnipi/cmake-build-debug/DavideUnipi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/davide/git/DavideUnipi/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 DavideUnipi"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DavideUnipi/fast">
+				<Option output="/home/davide/git/DavideUnipi/cmake-build-debug/DavideUnipi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/davide/git/DavideUnipi/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 DavideUnipi/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/davide/git/DavideUnipi/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/davide/git/DavideUnipi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/altro/ricerca_binaria.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/altro/ricerca_lineare.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/inversione/arr.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/is_first/n_primo.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/lab/stringhe.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/minmax/minmax.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/primi_disp/somma.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/somma/somma.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/swap/swap.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez1/tswap/swap.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/0_9/between.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/anagramma/anagramma.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/find/find_in_arr.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/moltiplicazione_stringhe/molt.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/my_strcat3.c/cat.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/my_strcmp/strcmp.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/my_strlen/mystrlen.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez2/mystrcat1/cat.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez3/fusione_arr/merge.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez3/inters_disordinata/non_ho_voglia_di_ottimizzare.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez3/intersezione_ordinata/inter.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez3/somma_sott/somm.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez4/ins_sort_int/ins_sort.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez4/ins_sort_str/alpha_order.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez4/my_quick/quick.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez4/my_quick/quick2.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/algo/lez4/sel_sort/sel_sort.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/automa/provarobocop2.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/automa/robocop.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/biblioteca/biblioteca.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/biblioteca/copiabiblio.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/morse/creazionealfabeto.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/morse/morse.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/morse/morse2.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/morse/morse3.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/morse/morse4.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/morse/morsesenzar.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/polonisman/lastpolonian.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/polonisman/polonianism.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/assignments/polonisman/polonianism2.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/calendar/calendar.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/coach/coach.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/coach/tosubmit.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/macchine/macchine.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/movingsegments/segmenti.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/particles/reactor.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/round/round.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/codechef/struct/amazon.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/esami/02_04_19/palindrome.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/esami/13_09_2019/array.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/esami/matrici/matrici_nelle_matrici.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/esami/regaloDiNatale/esame.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez10/dinamatr/azzeradiag.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez10/es1/es1.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez10/fuardior/fusion.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez10/matricole/matricol.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez10/moltmatrdin/moltiplicazionematricidinamiche.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez10/ordceck/ordered.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/1/listmagg.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/2/rimozione.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/3/add4.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/4/per.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/5/insOrd.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/5/insertionsortlist.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/6/intersection.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/7/aggiunta.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez11/no/staticint.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez12/esame.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/duearray/arrays.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/min_azzera/minazzera.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/moltiplicamat/moltiplica.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/multiplidi3/multipli.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/seqinvertita.c/seqinvertita.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/sequenza/seq.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/sommamat/sommamatrici.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/trasposta/trasposta.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez7/verificacondizione/verificacondizione.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez8/abs/abs.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez8/filst/occorrenza.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez8/occorrenza.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez8/pig/pig.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez8/swap/swap.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez8/ticta.c/ticta.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/automa/automa.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/bioseq/bioseq.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/dipendenti/dipendenti.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/elezioni/backupel.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/elezioni/elezioni.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/insort/inssortlist.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/ordone/intord.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/pila/pila.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/remove/rimozione.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/lezioni/lez9/students/students.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/arraydipuntatori/piaztrelleincode.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/arraydipuntatori/scanf.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/cpiupiu.cpp">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/directory/somma_intervallo.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/esame/1/espressione.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/commutazionevalute/tramutazionesoldi.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/asterischi/asterischi.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/crescente/crescente.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/data/data.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/esponenti.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/esponenti/esponenti.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/fibonaccinonricorsivo/fibonacci.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/mcdmcm/mcdMCM.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/media/media.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/numeri/numeri.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/palindrome/palindomia_portami_via.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/pi.c/pi.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/piastrelle/piastrelle.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/potenzedi2/pot.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/prezzo/prezzo.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/prezzo/prezzo2.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/rettangoli/rettangoli.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/esercizi_sito/tabelline/tabelline.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/inversione_sequenza_di_caratteri/inversione.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/malattia/propagazione.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/malattia/propagazione2.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/ordinavettallinserimento/pr.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/prove_enum/frazione_da_programma.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/prove_enum/prova_enum.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/rette.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/ricorsione/fibricoda.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/ricorsione/overflaw.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/sizeof.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/somma_intervallo/somma_intervallo.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/esercizi/programmi/tramutazionesoldi.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/liste/lista.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/condiscions/almenounariga.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/condiscions/almenouno.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/condiscions/esame/esamevecchio.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/condiscions/ognicolonna.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/condiscions/ogniel.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/condiscions/ogniriga.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/mergesort/minimamemoria.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/mergesort/priamisort.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/mergesort/try1.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/mergesort/try2.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/mergesort/try3.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/mergesort/try4.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/order/ordinaperrighe.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/order/ordinarighe.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/order/ordinatramitelista.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/readandprint/maxcolonna.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/readandprint/quadrata.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/matrici/readandprint/rettangolare.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/menupuntatori/menu.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/parcheggi/parcheggio.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/get/contemp.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/get/trymain.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/get/undefinesting.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/get/variousend.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/print/Y.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/print/r.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/print/trymain.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/readinput/print/trymainvsc.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/ripasso/lista.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/ripasso/mergesort.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/linux/provevarie/ripasso/ricercabinaria.c">
+			<Option target="DavideUnipi"/>
+		</Unit>
+		<Unit filename="/home/davide/git/DavideUnipi/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
