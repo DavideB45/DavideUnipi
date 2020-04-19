@@ -18,6 +18,14 @@ void sort(int sx, int centro1, int centro2,int fine, char **array);
 
 
 int main(void){
+	//char uno[20];
+	//char due[20];
+	//while(1){
+	//	scanf("%s", uno);
+	//	scanf("%s", due);
+	//	printf("%+d\n", compare_anagrams(uno, due));
+	//}
+	
 	int dim = readint();
 	char *array[dim];
 	fillArray(dim, array);
@@ -57,7 +65,11 @@ void printArray(int dim, char **array){
 
 int compare_anagrams(char *A, char *B){
 	//counting elements difference between A and B
-	char total_array[127];
+	int total_array[127];
+	for (size_t i = 0; i < 127; i++){
+		total_array[i] = 0;
+	}
+	
 	int i = 0;
 	//adding A
 	while(A[i] != '\0'){
@@ -66,9 +78,9 @@ int compare_anagrams(char *A, char *B){
 	i = 0;
 	//subtracting B
 	while(B[i] != '\0'){
-		total_array[(int)B[i]++]--;
+		total_array[(int)B[i++]]--;
 	}
-	for(i = 0; i < 128; i++){
+	for(i = 0; i < 127; i++){
 		if(total_array[i] < 0){
 			return -1;//winner = B
 		}
@@ -86,7 +98,7 @@ int compare_words(const void *A,const void *B){
 void dual_sort(int dim, char **array){
 	//prima le ordino per parola
 	//poi con un ordinamento stabile per anagramma
-	qsort(array, dim, sizeof(char**), compare_words);
+	//qsort(array, dim, sizeof(char**), compare_words);
 	merge(0, array, dim - 1);
 }
 
@@ -108,7 +120,7 @@ void sort(int sx, int centro1, int centro2,int fine, char **array){
 	int dx_i = centro2;
 	char *combined[fine - sx + 1];
 	int c_i = 0;
-	while(sx <= centro1 && dx_i <= fine){
+	while(sx_i <= centro1 && dx_i <= fine){
 		if(compare_anagrams(array[sx_i], array[dx_i]) < 0){
 			combined[c_i++] = array[dx_i++];
 		} else {
