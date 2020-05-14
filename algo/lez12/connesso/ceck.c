@@ -68,7 +68,7 @@ int DFS_visit_connect(graph * E, int v, int *color){
 	//equvale al numero di strade uscenti del nodo corrente
 	node * corrPtr = &(E->go_pointer)[v];
 	for (size_t i = 0; i < corrPtr->n_link_ext; i++){
-		printf("cor = %d || visitati = %d\n", v, visitati);
+	//	printf("cor = %d || visitati = %d\n", v, visitati);
 		if(color[corrPtr->link[i]]==0){//non ancora visitato
 			visitati = visitati + DFS_visit_connect(E, corrPtr->link[i], color);
 		}
