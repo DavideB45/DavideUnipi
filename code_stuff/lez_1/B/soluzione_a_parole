@@ -1,0 +1,6 @@
+si crea una lista di lettere
+si "tolgono" le lettere da left e right per creare una sottolista
+
+si spostano le ultime k lettere in posizione left in testa alla lista
+si concatena il resto della lista
+si inserisce la sottolista modificata dov'era

@@ -1,0 +1,18 @@
+In this problem you are to calculate the sum of all integers from 1 to n, but you should take all powers of two with minus in the sum.
+
+For example, for n = 4 the sum is equal to  - 1 - 2 + 3 - 4 =  - 4, because 1, 2 and 4 are 20, 21 and 22 respectively.
+
+Calculate the answer for t values of n
+
+
+es :
+input
+
+2
+4
+1000000000
+
+output
+
+-4
+499999998352516354

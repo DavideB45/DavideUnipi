@@ -1,0 +1,6 @@
+abbiamo una stringa di n caratteri
+str = [123456789]
+
+dati due indici di inizio e fine e un intero k
+portare il carattere in posizione fine in testa shiftando tutti gli altri
+caratteri verso destra, ripetiamo il procedimento per k volte
