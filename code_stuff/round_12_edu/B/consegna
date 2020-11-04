@@ -1,0 +1,11 @@
+c'e' un negozio con oggetti in fila
+la gente copra delle cose
+devi prenderle e spostarle davanti e guardare quanto tempo ci metti
+il tutto ha senso per problemi di spazio
+
+Input
+n_persone  m_elementi k_oggetti
+front oggetti_in_fila back
+lista prima persona
+lista .....
+lista ultima persona
