@@ -1,0 +1,13 @@
+calcolare D(n)
+n = numero intero
+D(n) = numero di numeri tra (1 e n) con 4 divisori
+
+ogni numero ha 2 divisori (1 e se stesso)
+quindi ogni numero scomponibile in esattamente 2 numeri primi
+
+consideriamo S insieme di numeri primi <= n/2
+// migliorare l'insieme S perche' cosi' e' sbagliato
+
+dato m = cardinalita' di S 
+si puo' anche prendere lo stesso numero piu' volte
+=> m*m
