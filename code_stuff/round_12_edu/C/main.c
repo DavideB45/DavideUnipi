@@ -15,10 +15,10 @@ int main(void){
 				string[i]++;
 				if(string[i] == string[i + 1]){//se aumentando diventa il prossimo aumento di nuovo
 					string[i]++;
-					if(string[i] > 'z'){//
-						string[i] = 'a';//
-					}					//
 				}
+				if(string[i] > 'z'){//
+					string[i] = 'a';//
+				}					//
 			}
 			exc = !exc;
 		} else {
